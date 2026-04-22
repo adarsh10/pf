@@ -1,0 +1,346 @@
+/* =============================================
+   MY CLICKS PAGE — Masonry Gallery
+   ============================================= */
+
+.clicks-hero {
+  padding-top: calc(var(--nav-height) + clamp(48px, 7vw, 80px));
+  padding-bottom: clamp(40px, 5vw, 60px);
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-left: clamp(20px, 5vw, 60px);
+  padding-right: clamp(20px, 5vw, 60px);
+}
+
+.clicks-hero-inner {
+  max-width: 640px;
+}
+
+.clicks-title {
+  font-family: var(--font-serif);
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.clicks-sub {
+  font-size: clamp(16px, 1.5vw, 18px);
+  color: var(--gray-600);
+  line-height: 1.7;
+  max-width: 48ch;
+}
+
+/* ---- Section ---- */
+.clicks-section {
+  padding-bottom: var(--section-padding);
+}
+
+.clicks-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 60px);
+}
+
+/* ---- Filter ---- */
+.clicks-filter {
+  display: flex;
+  gap: 8px;
+  margin-bottom: clamp(32px, 4vw, 48px);
+  flex-wrap: wrap;
+}
+
+.cf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: var(--gray-100);
+  color: var(--gray-400);
+  transition: all 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.cf-btn:hover {
+  background: var(--gray-200);
+  color: var(--black);
+}
+
+.cf-btn--active {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* ---- Masonry grid (CSS columns) ---- */
+.clicks-grid {
+  column-count: 3;
+  column-gap: 10px;
+}
+
+.click-item {
+  break-inside: avoid;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+}
+
+.click-item:hover { transform: scale(0.985); }
+
+.click-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Aspect ratio variants for masonry height variation */
+.click-thumb {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 16px;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+.click-thumb--portrait { aspect-ratio: 3 / 4; }
+.click-thumb--landscape { aspect-ratio: 4 / 3; }
+.click-thumb--square { aspect-ratio: 1 / 1; }
+
+.click-item:hover .click-thumb { transform: scale(1.03); }
+
+.click-ph-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.35);
+  font-family: var(--font-sans);
+  letter-spacing: 0.04em;
+}
+
+/* Video overlay */
+.click-thumb--video::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+}
+
+.click-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 1;
+}
+
+.click-item:hover .click-play-btn {
+  background: rgba(255,255,255,0.25);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.click-duration {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  color: rgba(255,255,255,0.7);
+  background: rgba(0,0,0,0.4);
+  padding: 3px 8px;
+  border-radius: 100px;
+  z-index: 1;
+  letter-spacing: 0.04em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .clicks-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .clicks-grid {
+    column-count: 1;
+  }
+}
+
+/* ---- Video thumbnails ---- */
+.click-video-thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.click-video-thumb video {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.click-play-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.click-item--video:hover .click-play-overlay {
+  background: rgba(0,0,0,0.15);
+}
+
+.click-video-label {
+  display: none;
+}
+
+/* ---- Hover overlay ---- */
+.click-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.click-item:hover .click-hover {
+  opacity: 1;
+}
+
+.click-hover-title {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.click-hover-sub {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+}
+
+/* ---- Lightbox ---- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-media {
+  max-width: 90vw;
+  max-height: 88vh;
+  border-radius: 6px;
+  object-fit: contain;
+  display: block;
+}
+
+video.lightbox-media {
+  outline: none;
+  background: #000;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  z-index: 10;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+.lightbox-nav--prev { left: 20px; }
+.lightbox-nav--next { right: 20px; }
+
+@media (max-width: 600px) {
+  .lightbox-nav { display: none; }
+}

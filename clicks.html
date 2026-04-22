@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Clicks — Adarsh Raj Shah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="clicks.css" />
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    })();
+  </script>
+</head>
+<body class="project-page">
+
+  <!-- BACK NAV -->
+  <nav class="back-nav" id="backNav">
+    <a href="index.html" class="back-link">
+      <span class="back-link-arrow">←</span> Back
+    </a>
+    <a href="index.html" class="back-nav-logo">Adarsh.</a>
+    <div class="back-nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="clicks-hero">
+    <div class="clicks-hero-inner">
+      <span class="section-label">Photography &amp; Film</span>
+      <h1 class="clicks-title">My Clicks.</h1>
+      <p class="clicks-sub">Moments I've captured with my Nikon — streets, light, people and quiet corners of the world.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="clicks-section">
+    <div class="clicks-inner">
+
+      <!-- Filter Tabs -->
+      <div class="clicks-filter">
+        <button class="cf-btn cf-btn--active" data-filter="all">All</button>
+        <button class="cf-btn" data-filter="photo">Photos</button>
+        <button class="cf-btn" data-filter="video">Videos</button>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div class="clicks-grid" id="clicksGrid">
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/3.png" alt="Photo 3" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Golden Hour</div>
+            <div class="click-hover-sub">Hyderabad, India</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/11.png" alt="Photo 11" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Still Waters</div>
+            <div class="click-hover-sub">Nikon D750</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/7.png" alt="Photo 7" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Into the Light</div>
+            <div class="click-hover-sub">Street photography</div>
+          </div>
+        </div>
+
+        <div class="click-item click-item--video" data-type="video" data-src="Clicks/Chirala.mov">
+          <div class="click-video-thumb">
+            <video src="Clicks/Chirala.mov" muted preload="metadata"></video>
+            <div class="click-play-overlay">
+              <svg width="24" height="28" viewBox="0 0 18 20" fill="#fff"><path d="M0 0l18 10L0 20V0z"/></svg>
+            </div>
+          </div>
+          <div class="click-hover">
+            <div class="click-hover-title">Chirala</div>
+            <div class="click-hover-sub">Short film · Andhra Pradesh</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/1.png" alt="Photo 1" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Morning Mist</div>
+            <div class="click-hover-sub">Landscape</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/14.png" alt="Photo 14" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Quiet Corner</div>
+            <div class="click-hover-sub">Travel photography</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/5.png" alt="Photo 5" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Colours of Dusk</div>
+            <div class="click-hover-sub">Nikon D750</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/9.png" alt="Photo 9" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Parallel Lines</div>
+            <div class="click-hover-sub">Architecture</div>
+          </div>
+        </div>
+
+        <div class="click-item click-item--video" data-type="video" data-src="Clicks/KL_HD.mov">
+          <div class="click-video-thumb">
+            <video src="Clicks/KL_HD.mov" muted preload="metadata"></video>
+            <div class="click-play-overlay">
+              <svg width="24" height="28" viewBox="0 0 18 20" fill="#fff"><path d="M0 0l18 10L0 20V0z"/></svg>
+            </div>
+          </div>
+          <div class="click-hover">
+            <div class="click-hover-title">Kuala Lumpur</div>
+            <div class="click-hover-sub">Short film · Malaysia</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/16.png" alt="Photo 16" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Fading Light</div>
+            <div class="click-hover-sub">Sunset series</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/2.png" alt="Photo 2" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Old Town</div>
+            <div class="click-hover-sub">Street photography</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/12.png" alt="Photo 12" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Reflections</div>
+            <div class="click-hover-sub">Nikon D750</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/6.png" alt="Photo 6" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">First Light</div>
+            <div class="click-hover-sub">Landscape</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/15.png" alt="Photo 15" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Concrete &amp; Sky</div>
+            <div class="click-hover-sub">Architecture</div>
+          </div>
+        </div>
+
+        <div class="click-item click-item--video" data-type="video" data-src="Clicks/Penang%20HD.mov">
+          <div class="click-video-thumb">
+            <video src="Clicks/Penang%20HD.mov" muted preload="metadata"></video>
+            <div class="click-play-overlay">
+              <svg width="24" height="28" viewBox="0 0 18 20" fill="#fff"><path d="M0 0l18 10L0 20V0z"/></svg>
+            </div>
+          </div>
+          <div class="click-hover">
+            <div class="click-hover-title">Penang</div>
+            <div class="click-hover-sub">Short film · Malaysia</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/8.png" alt="Photo 8" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Blue Hour</div>
+            <div class="click-hover-sub">Nikon D750</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/4.png" alt="Photo 4" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Open Road</div>
+            <div class="click-hover-sub">Travel photography</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/13.png" alt="Photo 13" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Shadows</div>
+            <div class="click-hover-sub">Street photography</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/10.png" alt="Photo 10" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Warm Tones</div>
+            <div class="click-hover-sub">Portrait</div>
+          </div>
+        </div>
+
+        <div class="click-item" data-type="photo">
+          <img src="Clicks/17.png" alt="Photo 17" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Last Frame</div>
+            <div class="click-hover-sub">Nikon D750</div>
+          </div>
+        </div>
+
+        <div class="click-item click-item--video" data-type="video" data-src="Clicks/Thai.mp4">
+          <div class="click-video-thumb">
+            <video src="Clicks/Thai.mp4" muted preload="metadata"></video>
+            <div class="click-play-overlay">
+              <svg width="24" height="28" viewBox="0 0 18 20" fill="#fff"><path d="M0 0l18 10L0 20V0z"/></svg>
+            </div>
+          </div>
+          <div class="click-hover">
+            <div class="click-hover-title">Thailand</div>
+            <div class="click-hover-sub">Short film · Thailand</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><line x1="2" y1="2" x2="18" y2="18"/><line x1="18" y1="2" x2="2" y2="18"/></svg>
+    </button>
+    <button class="lightbox-nav lightbox-nav--prev" id="lightboxPrev" aria-label="Previous">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 4 7 10 13 16"/></svg>
+    </button>
+    <button class="lightbox-nav lightbox-nav--next" id="lightboxNext" aria-label="Next">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 4 13 10 7 16"/></svg>
+    </button>
+    <div class="lightbox-content" id="lightboxContent"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">© 2025 Adarsh Raj Shah. All rights reserved.</div>
+    <div class="footer-right">Shot on Nikon.</div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.classList.add('theme-switching');
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        setTimeout(() => document.documentElement.classList.remove('theme-switching'), 500);
+      });
+    }
+
+    // Back nav scroll effect
+    const nav = document.getElementById('backNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // Filter
+    const filterBtns = document.querySelectorAll('.cf-btn');
+
+    function applyFilter(filter) {
+      filterBtns.forEach(b => b.classList.toggle('cf-btn--active', b.dataset.filter === filter));
+      document.querySelectorAll('.click-item').forEach(item => {
+        item.style.display = (filter === 'all' || item.dataset.type === filter) ? '' : 'none';
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
+    });
+
+    // Lightbox — navigates only visible items
+    (() => {
+      const lightbox = document.getElementById('lightbox');
+      const content = document.getElementById('lightboxContent');
+      let currentIndex = -1;
+
+      function visibleItems() {
+        return [...document.querySelectorAll('.click-item')].filter(el => el.style.display !== 'none');
+      }
+
+      function openLightbox(index) {
+        currentIndex = index;
+        const item = visibleItems()[index];
+        content.innerHTML = '';
+
+        if (item.dataset.type === 'video') {
+          const video = document.createElement('video');
+          video.src = item.dataset.src;
+          video.controls = true;
+          video.autoplay = true;
+          video.className = 'lightbox-media';
+          content.appendChild(video);
+        } else {
+          const img = item.querySelector('img');
+          const el = document.createElement('img');
+          el.src = img.src;
+          el.alt = img.alt;
+          el.className = 'lightbox-media';
+          content.appendChild(el);
+        }
+
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        document.body.style.overflow = '';
+        const video = content.querySelector('video');
+        if (video) video.pause();
+        content.innerHTML = '';
+        currentIndex = -1;
+      }
+
+      function navigate(dir) {
+        if (currentIndex < 0) return;
+        const items = visibleItems();
+        let next = currentIndex + dir;
+        if (next < 0) next = items.length - 1;
+        if (next >= items.length) next = 0;
+        openLightbox(next);
+      }
+
+      document.querySelectorAll('.click-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const idx = visibleItems().indexOf(item);
+          if (idx >= 0) openLightbox(idx);
+        });
+      });
+
+      document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+      document.getElementById('lightboxPrev').addEventListener('click', () => navigate(-1));
+      document.getElementById('lightboxNext').addEventListener('click', () => navigate(1));
+
+      lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+      document.addEventListener('keydown', e => {
+        if (!lightbox.classList.contains('is-open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navigate(-1);
+        if (e.key === 'ArrowRight') navigate(1);
+      });
+    })();
+  </script>
+</body>
+</html>

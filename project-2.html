@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Previewer in M365 Copilot — Adarsh Raj Shah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    })();
+  </script>
+</head>
+<body class="project-page">
+
+  <!-- BACK NAV -->
+  <nav class="back-nav" id="backNav">
+    <a href="index.html" class="back-link">
+      <span class="back-link-arrow">←</span> Back to Work
+    </a>
+    <a href="index.html" class="back-nav-logo">Adarsh.</a>
+    <div class="back-nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="proj-hero">
+    <div class="proj-hero-content">
+      <div class="proj-hero-tags">
+        <span class="proj-tag proj-tag--accent">AI Design</span>
+        <span class="proj-tag">Interaction Design</span>
+        <span class="proj-tag">Mobile · iOS &amp; Android</span>
+        <span class="proj-tag">2024</span>
+      </div>
+      <h1 class="proj-hero-title">AI Previewer in M365 Copilot</h1>
+      <p class="proj-hero-sub">Designing the Dynamic Action Bar — a persistent, context-aware Copilot entry point inside Word, Excel, PowerPoint and Outlook previewers that lifted AI engagement from ~2% to ~15%.</p>
+      <div class="proj-hero-meta">
+        <div class="proj-meta-item">
+          <div class="proj-meta-label">Role</div>
+          <div class="proj-meta-value">Senior Product Designer</div>
+        </div>
+        <div class="proj-meta-item">
+          <div class="proj-meta-label">Surfaces</div>
+          <div class="proj-meta-value">Word · Excel · PowerPoint · Outlook</div>
+        </div>
+        <div class="proj-meta-item">
+          <div class="proj-meta-label">Scope</div>
+          <div class="proj-meta-value">UX Strategy · Interaction Model · System Scaling</div>
+        </div>
+        <div class="proj-meta-item">
+          <div class="proj-meta-label">Platform</div>
+          <div class="proj-meta-value">M365 Copilot Mobile</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual banner -->
+    <div class="proj-banner proj-bg-2">
+      <div class="proj-banner-inner">
+        <div class="proj-banner-doc">
+          <div class="pbd-header">
+            <div class="pbd-dot"></div>
+            <div class="pbd-dot"></div>
+            <div class="pbd-dot"></div>
+          </div>
+          <div class="pbd-body">
+            <div class="pbd-line"></div>
+            <div class="pbd-line pbd-line--s"></div>
+            <div class="pbd-line"></div>
+            <div class="pbd-line pbd-line--m"></div>
+            <div class="pbd-line pbd-line--s"></div>
+            <div class="pbd-line"></div>
+          </div>
+          <div class="pbd-dab">
+            <div class="pbd-chip pbd-chip--ai">✦ Summarise</div>
+            <div class="pbd-chip">Ask</div>
+            <div class="pbd-chip">Draft</div>
+            <div class="pbd-chip">Share</div>
+          </div>
+        </div>
+        <div class="proj-banner-doc" style="opacity:0.45; transform: translateY(20px) scale(0.93);">
+          <div class="pbd-header">
+            <div class="pbd-dot"></div>
+            <div class="pbd-dot"></div>
+            <div class="pbd-dot"></div>
+          </div>
+          <div class="pbd-body">
+            <div class="pbd-line"></div>
+            <div class="pbd-line pbd-line--m"></div>
+            <div class="pbd-line pbd-line--s"></div>
+            <div class="pbd-line"></div>
+          </div>
+          <div class="pbd-dab">
+            <div class="pbd-chip pbd-chip--ai">✦ Explain</div>
+            <div class="pbd-chip">Edit</div>
+            <div class="pbd-chip">Open</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <div class="proj-body">
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">The Problem</span>
+      <h2>Copilot was buried. Users were consuming documents, not using AI.</h2>
+      <p>On mobile, users open documents frequently — but engaged with Copilot almost never. The older model put Copilot behind a static button or a buried menu entry. The result: low discoverability, low intent expression, and a fragmented experience that felt different across every M365 app.</p>
+      <p>The previewer surface was a high-traffic, low-AI-engagement paradox. People were looking at their documents but had no natural bridge to AI assistance.</p>
+      <div class="proj-callout">
+        <p>"The question wasn't 'how do we add AI to previewers?' — it was 'how do we make Copilot feel like it was always supposed to be here?'"</p>
+      </div>
+    </div>
+
+    <div class="proj-img-box reveal">
+      <div class="proj-img-ph">
+        <div class="proj-img-ph-icon">⬚</div>
+        <span>Before state — old Copilot entry points — drop your image here</span>
+      </div>
+    </div>
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">The Goal</span>
+      <h2>A single, consistent Copilot entry point — discoverable and context-aware.</h2>
+      <p>The goal was to evolve Copilot from "a button you tap" to "a dynamic action surface." It had to be:</p>
+      <ul class="proj-list">
+        <li>Always discoverable — no hunting through menus</li>
+        <li>Adaptive to context — different file types, different moments, different needs</li>
+        <li>Lightweight enough for mobile's constrained chrome</li>
+        <li>Scalable across Word, Excel, PowerPoint, Outlook and beyond</li>
+      </ul>
+    </div>
+
+    <div class="proj-img-box reveal">
+      <div class="proj-img-ph">
+        <div class="proj-img-ph-icon">⬚</div>
+        <span>Goal & vision — drop your image here</span>
+      </div>
+    </div>
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">Key Idea</span>
+      <h2>Evolve Copilot from "a button you tap" to "a dynamic action surface."</h2>
+      <p>This insight led to the Dynamic Action Bar (DAB) — a persistent, adaptive command layer that blends Copilot actions (AI-powered) and App actions (native commands) into a single, always-present bar at the bottom of every previewer.</p>
+    </div>
+
+    <div class="proj-img-box reveal">
+      <div class="proj-img-ph">
+        <div class="proj-img-ph-icon">⬚</div>
+        <span>Key idea — DAB concept — drop your image here</span>
+      </div>
+    </div>
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">My Design Approach</span>
+      <h2>System thinking over screens.</h2>
+      <p>I focused on creating a system-level solution rather than isolated screens. Every decision was filtered through mobile constraints and the goal of consistency across surfaces.</p>
+      <div class="proj-decisions">
+        <div class="proj-decision">
+          <div class="proj-decision-num">01</div>
+          <div>
+            <h3>Consistent placement builds muscle memory</h3>
+            <p>DAB stays in the same location across all previewers. Users always know where to find it — whether they're in Word, Excel, or PowerPoint. Predictability is a feature.</p>
+          </div>
+        </div>
+        <div class="proj-decision">
+          <div class="proj-decision-num">02</div>
+          <div>
+            <h3>Dual states: Copilot vs App actions in one surface</h3>
+            <p>Copilot actions (Summarise, Ask, Draft, Explain) share space with app actions (Share, Edit, Open in app). A clear visual hierarchy prevents confusion — AI actions lead, app actions support.</p>
+          </div>
+        </div>
+        <div class="proj-decision">
+          <div class="proj-decision-num">03</div>
+          <div>
+            <h3>Preview-safe interaction with half-sheet patterns</h3>
+            <p>Copilot responses surface in a half-sheet so users never lose document context. They can read, scroll, and act on AI output without leaving the preview experience.</p>
+          </div>
+        </div>
+        <div class="proj-decision">
+          <div class="proj-decision-num">04</div>
+          <div>
+            <h3>Mobile restraint — no heavy chrome, no mode switches</h3>
+            <p>Every decision was filtered through a mobile constraint lens. No complex mode-switching unless the user explicitly opts in. The DAB is persistent but unobtrusive.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-img-box reveal">
+      <div class="proj-img-ph">
+        <div class="proj-img-ph-icon">⬚</div>
+        <span>DAB component design & specs — drop your image here</span>
+      </div>
+    </div>
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">What I Designed</span>
+      <h2>A system, not just a component.</h2>
+      <ul class="proj-list">
+        <li>DAB interaction model for Word, Excel and PowerPoint previewers</li>
+        <li>Action hierarchy framework for Copilot vs native app commands</li>
+        <li>Scrolling behavior and gesture handling inside half-sheet Copilot previews</li>
+        <li>Overflow strategy to keep the surface clean when action count exceeds visible space</li>
+        <li>Reusable DAB patterns later applied to Outlook and other M365 mobile hubs</li>
+      </ul>
+    </div>
+
+    <div class="proj-img-box reveal">
+      <div class="proj-img-ph">
+        <div class="proj-img-ph-icon">⬚</div>
+        <span>DAB in Word, Excel & PowerPoint — drop your image here</span>
+      </div>
+    </div>
+
+    <div class="proj-img-box reveal">
+      <div class="proj-img-ph">
+        <div class="proj-img-ph-icon">⬚</div>
+        <span>Reusable DAB patterns in Outlook — drop your image here</span>
+      </div>
+    </div>
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">Impact</span>
+      <h2>Previewers became Copilot's highest-intent entry point.</h2>
+      <div class="proj-impact-stats">
+        <div class="proj-impact-stat">
+          <div class="proj-impact-num">~2%</div>
+          <div class="proj-impact-label">Copilot engagement in WXP previewers before DAB</div>
+        </div>
+        <div class="proj-impact-stat">
+          <div class="proj-impact-num">~15%</div>
+          <div class="proj-impact-label">Copilot engagement in WXP previewers after DAB adoption</div>
+        </div>
+        <div class="proj-impact-stat">
+          <div class="proj-impact-num">×N</div>
+          <div class="proj-impact-label">DAB scaled as a reusable AI-first pattern across M365 mobile</div>
+        </div>
+      </div>
+      <p style="margin-top:28px;">The Dynamic Action Bar is now positioned as a scalable, AI-first interaction pattern across M365 mobile apps — the standard for how Copilot surfaces inside document-centric experiences.</p>
+    </div>
+
+  </div>
+
+  <!-- PROJECT NAV -->
+  <div class="proj-nav">
+    <a href="project-1.html" class="proj-nav-link">
+      <span class="proj-nav-dir">← Previous</span>
+      <span class="proj-nav-title">Copilot Onboarding FRE</span>
+    </a>
+    <a href="project-3.html" class="proj-nav-link proj-nav-link--next">
+      <span class="proj-nav-dir">Next Project →</span>
+      <span class="proj-nav-title">Proactive Assistance in M365 Mobile</span>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">© 2025 Adarsh Raj Shah. All rights reserved.</div>
+    <div class="footer-right">Designed &amp; built with care.</div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    const nav = document.getElementById('backNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  </script>
+</body>
+</html>

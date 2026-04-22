@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adarsh Raj Shah - Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#" class="nav-logo">Adarssssh.</a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="clicks.html">Clicks</a>
+      <a href="resume.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <a href="#work" class="mobile-link">Work</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="clicks.html" class="mobile-link">Clicks</a>
+    <a href="resume.pdf" target="_blank" rel="noopener" class="mobile-link mobile-link--resume">Resume</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+<h1 class="hero-title">
+        <span class="hero-title-regular">Designing delightful</span><br />
+        <span class="gradient-text">AI experiences,</span> <span class="hero-title-muted">everyday!</span>
+      </h1>
+      <p class="hero-sub">
+        Senior Product Designer at Microsoft, crafting purposeful AI-native interfaces for M365 Copilot.
+      </p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary">View Work</a>
+        <a href="#contact" class="btn btn-ghost">Let's Talk →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section class="work" id="work">
+    <div class="section-header">
+      <span class="section-label">Selected Work</span>
+      <h2 class="section-title">Recent Projects</h2>
+    </div>
+
+    <!-- MICROSOFT JOURNEY BANNER -->
+    <div class="msft-banner-wrap">
+      <div class="msft-banner">
+        <div class="msft-orb msft-orb--1"></div>
+        <div class="msft-orb msft-orb--2"></div>
+        <div class="msft-banner-left">
+          <div class="msft-banner-tag">
+            <span class="msft-tag-dot"></span>
+            7 Years at Microsoft
+          </div>
+          <h3 class="msft-banner-title">Seven years, <em>infinite learnings.</em></h3>
+          <p class="msft-banner-desc">From intern to AI charter — designing at Microsoft's frontier.</p>
+          <button class="msft-banner-cta" id="openStories">
+            <span class="msft-cta-play">
+              <svg width="8" height="10" viewBox="0 0 8 10" fill="currentColor"><path d="M0 0l8 5-8 5V0z"/></svg>
+            </span>
+            Watch the Journey
+          </button>
+        </div>
+        <div class="msft-banner-right" aria-hidden="true">
+          <div class="msft-card-stack">
+            <div class="msft-sc msft-sc--4"></div>
+            <div class="msft-sc msft-sc--3"></div>
+            <div class="msft-sc msft-sc--2"></div>
+            <div class="msft-sc msft-sc--1">
+              <div class="msft-sc-year">2018</div>
+              <div class="msft-sc-label">Intern Days</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <article class="project-card">
+        <div class="project-image">
+          <div class="project-image-inner proj1-thumb">
+            <img src="Images/project-1/thumb.png" alt="" class="proj1-thumb-img" />
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-num">01</span>
+          <div class="project-meta">
+            <span class="project-category">UX Design · Mobile</span>
+            <span class="project-year">2024</span>
+          </div>
+          <h3 class="project-name">New User Onboarding for M365 Copilot</h3>
+          <p class="project-desc">Redesigned the first-run experience for Copilot Mobile — turning a confusing intro into a guided first success that boosted new-user prompt submission and Week-1 retention.</p>
+          <a href="project-1.html" class="project-link">View Case Study →</a>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card">
+        <div class="project-image">
+          <div class="project-image-inner proj-bg-2">
+            <div class="mock-doc-preview">
+              <div class="mock-doc-body">
+                <div class="mock-doc-line"></div>
+                <div class="mock-doc-line mock-doc-line--short"></div>
+                <div class="mock-doc-line"></div>
+                <div class="mock-doc-line mock-doc-line--med"></div>
+              </div>
+              <div class="mock-dab">
+                <div class="mock-dab-chip mock-dab-chip--ai">✦ Summarise</div>
+                <div class="mock-dab-chip">Ask</div>
+                <div class="mock-dab-chip">Share</div>
+                <div class="mock-dab-more">···</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-num">02</span>
+          <div class="project-meta">
+            <span class="project-category">AI · Interaction Design</span>
+            <span class="project-year">2024</span>
+          </div>
+          <h3 class="project-name">AI Previewer in M365 Copilot</h3>
+          <p class="project-desc">Designed the Dynamic Action Bar — a persistent, context-aware Copilot entry point inside WXP previewers that lifted AI engagement from ~2% to ~15%.</p>
+          <a href="project-2.html" class="project-link">View Case Study →</a>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card">
+        <div class="project-image">
+          <div class="project-image-inner proj-bg-3">
+            <div class="mock-proactive">
+              <div class="mock-pa-card">
+                <div class="mock-pa-eyebrow"></div>
+                <div class="mock-pa-title"></div>
+                <div class="mock-pa-sub"></div>
+                <div class="mock-pa-actions">
+                  <div class="mock-pa-btn mock-pa-btn--primary"></div>
+                  <div class="mock-pa-btn"></div>
+                </div>
+              </div>
+              <div class="mock-pa-card mock-pa-card--faded">
+                <div class="mock-pa-eyebrow"></div>
+                <div class="mock-pa-title mock-pa-title--short"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-num">03</span>
+          <div class="project-meta">
+            <span class="project-category">AI · Systems Design</span>
+            <span class="project-year">2024</span>
+          </div>
+          <h3 class="project-name">Proactive Assistance in M365 Mobile</h3>
+          <p class="project-desc">Built a scalable UX framework for proactive AI nudges across Copilot, Outlook and Teams — shifting the product from reactive to ambient intelligence.</p>
+          <a href="project-3.html" class="project-link">View Case Study →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <span class="section-label">About Me</span>
+        <h2 class="about-title">I design with intention, not decoration.</h2>
+        <p>I'm a product designer with 7+ years of experience working at Microsoft, India.</p>
+        <p>Based out of Hyderabad, India, open to remote and on-site collaborations.</p>
+      </div>
+      <div class="about-image">
+        <div class="about-image-placeholder">
+          <img src="adarsh.jpg" alt="Adarsh Raj Shah" class="about-photo" />
+        </div>
+        <div class="about-tools">
+          <span>AI</span>
+          <span>Claude Code</span>
+          <span>Prototyping</span>
+          <span>Travelling</span>
+          <span>Motion</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="contact-title">Let's build something great together.</h2>
+      <p class="contact-sub">Available for new projects starting Q2 2025. If you have something in mind, let's talk.</p>
+      <a href="mailto:hello@adarsh.design" class="btn btn-primary btn-large">Say Hello →</a>
+      <div class="contact-socials">
+        <span class="contact-tag">AI</span>
+        <span class="contact-tag">Claude Code</span>
+        <span class="contact-tag">Prototyping</span>
+        <span class="contact-tag">Travelling</span>
+        <span class="contact-tag">Motion</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">© 2025 Adarsh Raj Shah. All rights reserved.</div>
+    <div class="footer-right">Designed &amp; built with care.</div>
+  </footer>
+
+  <!-- STORY VIEWER MODAL -->
+  <div class="story-viewer" id="storyViewer" role="dialog" aria-modal="true" aria-label="Microsoft Journey Stories">
+    <div class="sv-wrap" id="svWrap">
+      <div class="sv-progress-row" id="svProgressRow"></div>
+      <div class="sv-top-bar">
+        <div class="sv-brand">
+          <div class="sv-brand-m">M</div>
+          <span>Microsoft</span>
+        </div>
+        <button class="sv-close-btn" id="svClose" aria-label="Close">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/></svg>
+        </button>
+      </div>
+      <div class="sv-slide-area" id="svSlideArea"></div>
+      <button class="sv-nav-btn sv-nav-btn--prev" id="svPrev" aria-label="Previous story"></button>
+      <button class="sv-nav-btn sv-nav-btn--next" id="svNext" aria-label="Next story"></button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

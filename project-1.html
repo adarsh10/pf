@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copilot Onboarding FRE — Adarsh Raj Shah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    })();
+  </script>
+</head>
+<body class="project-page">
+
+  <!-- BACK NAV -->
+  <nav class="back-nav" id="backNav">
+    <a href="index.html" class="back-link">
+      <span class="back-link-arrow">←</span> Back to Work
+    </a>
+    <a href="index.html" class="back-nav-logo">Adarsh.</a>
+    <div class="back-nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="proj-hero">
+    <div class="proj-hero-content">
+      <div class="proj-hero-tags">
+        <span class="proj-tag proj-tag--accent">AI Design</span>
+        <span class="proj-tag">Growth</span>
+        <span class="proj-tag">Retention</span>
+        <span class="proj-tag">2025–26</span>
+      </div>
+      <h1 class="proj-hero-title">New User Onboarding for M365 Copilot Mobile</h1>
+      <p class="proj-hero-sub">Reframing the first-run experience from a feature tour into a guided first success — so new users feel Copilot's value before they're asked to trust it.</p>
+      <div class="proj-hero-meta">
+        <div class="proj-meta-item">
+          <div class="proj-meta-label">Role</div>
+          <div class="proj-meta-value">Senior Product Designer</div>
+        </div>
+        <div class="proj-meta-item">
+          <div class="proj-meta-label">Product</div>
+          <div class="proj-meta-value">M365 Copilot Mobile</div>
+        </div>
+        <div class="proj-meta-item">
+          <div class="proj-meta-label">Scope</div>
+          <div class="proj-meta-value">Strategy · UX · Prompt Design · E2E Flows</div>
+        </div>
+        <div class="proj-meta-item">
+          <div class="proj-meta-label">Platform</div>
+          <div class="proj-meta-value">iOS · Android</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual banner -->
+    <div class="proj-banner proj-banner--img-hero">
+      <img src="Images/project-1/hero-banner.png" alt="Redesigning new user onboarding for growth" class="proj-banner-hero-img" />
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <div class="proj-body">
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">The Problem</span>
+      <h2>First impressions were breaking confidence, not building it.</h2>
+      <p>New users landed in Copilot without understanding what it could do for them. Generic prompts were ignored, failed interactions killed trust fast, and users rarely returned — especially non-enterprise paid users with less context for the AI's value.</p>
+      <div class="proj-callout">
+        <p>"If the first interaction feels useful, users will come back. If it doesn't, they probably won't."</p>
+      </div>
+    </div>
+
+    <div class="proj-img-box reveal">
+      <div class="rc-wrap">
+
+        <div class="rc-head">
+          <span class="rc-eyebrow">Research Insights</span>
+          <h3 class="rc-title">Chat Active Rate — New User Behaviour</h3>
+          <p class="rc-subtitle">Organic vs Inorganic acquisition across iOS &amp; Android paid segments</p>
+          <div class="rc-legend">
+            <div class="rc-leg"><span class="rc-leg-dot rc-leg-dot--o"></span>Organic</div>
+            <div class="rc-leg"><span class="rc-leg-dot rc-leg-dot--i"></span>Inorganic</div>
+          </div>
+        </div>
+
+        <!-- iOS -->
+        <div class="rc-group">
+          <div class="rc-group-label">iOS</div>
+
+          <div class="rc-segment">
+            <div class="rc-seg-name">Paid Enterprise</div>
+            <div class="rc-bar rc-bar--o" style="--p:72">
+              <span class="rc-bar-label">Organic</span>
+              <div class="rc-track"><div class="rc-fill"></div></div>
+              <span class="rc-pct">72%</span>
+            </div>
+            <div class="rc-bar rc-bar--i" style="--p:7">
+              <span class="rc-bar-label">Inorganic</span>
+              <div class="rc-track"><div class="rc-fill"></div></div>
+              <span class="rc-pct">7%</span>
+            </div>
+          </div>
+
+          <div class="rc-segment">
+            <div class="rc-seg-name">Paid Consumer</div>
+            <div class="rc-bar rc-bar--o" style="--p:35">
+              <span class="rc-bar-label">Organic</span>
+              <div class="rc-track"><div class="rc-fill"></div></div>
+              <span class="rc-pct">35%</span>
+            </div>
+            <div class="rc-bar rc-bar--i" style="--p:2">
+              <span class="rc-bar-label">Inorganic</span>
+              <div class="rc-track"><div class="rc-fill"></div></div>
+              <span class="rc-pct">2%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Android -->
+        <div class="rc-group">
+          <div class="rc-group-label">Android</div>
+
+          <div class="rc-segment">
+            <div class="rc-seg-name">Paid Enterprise</div>
+            <div class="rc-bar rc-bar--o" style="--p:25">
+              <span class="rc-bar-label">Organic</span>
+              <div class="rc-track"><div class="rc-fill"></div></div>
+              <span class="rc-pct">25%</span>
+            </div>
+            <div class="rc-bar rc-bar--i" style="--p:1.2">
+              <span class="rc-bar-label">Inorganic</span>
+              <div class="rc-track"><div class="rc-fill"></div></div>
+              <span class="rc-pct">1.2%</span>
+            </div>
+          </div>
+
+          <div class="rc-segment">
+            <div class="rc-seg-name">Paid Consumer</div>
+            <div class="rc-bar rc-bar--o" style="--p:8">
+              <span class="rc-bar-label">Organic</span>
+              <div class="rc-track"><div class="rc-fill"></div></div>
+              <span class="rc-pct">8%</span>
+            </div>
+            <div class="rc-bar rc-bar--i" style="--p:0.5">
+              <span class="rc-bar-label">Inorganic</span>
+              <div class="rc-track"><div class="rc-fill"></div></div>
+              <span class="rc-pct">0.5%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Users -->
+        <div class="rc-new-users">
+          <div class="rc-nu-label">New Users (overall)</div>
+          <div class="rc-nu-cards">
+            <div class="rc-nu-card">
+              <div class="rc-nu-platform">iOS</div>
+              <div class="rc-nu-val">26%</div>
+            </div>
+            <div class="rc-nu-card">
+              <div class="rc-nu-platform">Android</div>
+              <div class="rc-nu-val">19.5%</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">The Goal</span>
+      <h2>Design a first-run experience built around a guided first success.</h2>
+      <ul class="proj-list">
+        <li>Copilot's value shown through real, relatable work contexts</li>
+        <li>Users succeeding with their very first prompt</li>
+        <li>A consistent experience across SKUs and eligibility states</li>
+        <li>Measurable lift in Week-1 engagement and prompt submission</li>
+      </ul>
+    </div>
+
+    <div class="proj-img-box reveal">
+      <div class="gc-wrap">
+
+        <div class="gc-head">
+          <span class="gc-eyebrow">Goals &amp; Success Metrics</span>
+          <h3 class="gc-title">Week-1 Prompt Submission Rate</h3>
+          <p class="gc-subtitle">Every new user must experience a successful Copilot interaction within their first 7 days</p>
+        </div>
+
+        <!-- Current vs Target -->
+        <div class="gc-compare">
+          <div class="gc-compare-item gc-compare-item--now">
+            <span class="gc-badge">Baseline</span>
+            <div class="gc-compare-val">25%</div>
+            <div class="gc-compare-desc">of new users submit a prompt in Week 1 today</div>
+          </div>
+          <div class="gc-compare-arrow">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M5 14h18M17 8l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="gc-compare-item gc-compare-item--goal">
+            <span class="gc-badge">Target</span>
+            <div class="gc-compare-val">100%</div>
+            <div class="gc-compare-desc">of new users submit a prompt in Week 1</div>
+          </div>
+        </div>
+
+        <!-- Expected impact -->
+        <div class="gc-impact">
+          <div class="gc-impact-eyebrow">Expected Impact</div>
+          <div class="gc-impact-content">
+            <div class="gc-impact-val">~150K</div>
+            <div class="gc-impact-meta">
+              <div class="gc-impact-unit">WoW WAU</div>
+              <div class="gc-impact-desc">Weekly active users unlocked based on current top-of-funnel numbers — scales further with additional funnel investment</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">My Approach</span>
+      <h2>Reframing onboarding as a guided first success.</h2>
+      <div class="proj-callout">
+        <p>"If the first interaction feels useful, users will come back."</p>
+      </div>
+      <p>Three key design moves: personalized first prompts, silent progressive setup, and clear exits that respect user control at every step.</p>
+    </div>
+
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">Key Design Decisions</span>
+      <h2>Three moves that changed the onboarding equation.</h2>
+      <div class="proj-decisions">
+        <div class="proj-decision">
+          <div class="proj-decision-num">01</div>
+          <div>
+            <h3>Personalized first prompts, not generic suggestions</h3>
+            <p>Premium users got graph-based prompts tied to their actual work (emails, meetings, docs). Non-enterprise paid users got lightweight prompts focused on immediate relevance — not feature showcasing.</p>
+          </div>
+        </div>
+        <div class="proj-decision">
+          <div class="proj-decision-num">02</div>
+          <div>
+            <h3>Progressive setup — no wall of steps</h3>
+            <p>Eligibility checks and setup ran silently in the background. Users only entered the chat when Copilot was ready — eliminating confusion during early app moments.</p>
+          </div>
+        </div>
+        <div class="proj-decision">
+          <div class="proj-decision-num">03</div>
+          <div>
+            <h3>Clear exits and user control as a design constraint</h3>
+            <p>Dismissable at any time, no dead-end flows. Trust earned through design quality — not forced engagement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design Explorations — full-bleed marquee -->
+    <div class="explore-bleed reveal">
+
+      <div class="explore-label-row">
+        <span class="proj-section-label">Design Explorations</span>
+        <p class="explore-desc">Early flows and iterations — working through structure, density and hierarchy before landing on the final direction.</p>
+      </div>
+
+      <!-- Slow marquee -->
+      <div class="explore-marquee">
+        <div class="explore-track">
+          <!-- Set 1 -->
+          <div class="explore-card"><img src="Images/project-1/Op1.png"  alt="Exploration 1"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/project-1/Op2.png"  alt="Exploration 2"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/project-1/Op3.png"  alt="Exploration 3"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/project-1/Op4.png"  alt="Exploration 4"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/project-1/Op5.png"  alt="Exploration 5"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/project-1/Op6.png"  alt="Exploration 6"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/project-1/Op7.png"  alt="Exploration 7"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/project-1/Op8.png"  alt="Exploration 8"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/project-1/Op9.png"  alt="Exploration 9"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/project-1/Op10.png" alt="Exploration 10" loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/project-1/Op11.png" alt="Exploration 11" loading="lazy"/></div>
+          <!-- Set 2 (duplicate for seamless loop) -->
+          <div class="explore-card" aria-hidden="true"><img src="Images/project-1/Op1.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/project-1/Op2.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/project-1/Op3.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/project-1/Op4.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/project-1/Op5.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/project-1/Op6.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/project-1/Op7.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/project-1/Op8.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/project-1/Op9.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/project-1/Op10.png" alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/project-1/Op11.png" alt="" loading="lazy"/></div>
+        </div>
+      </div>
+    </div><!-- /.explore-bleed -->
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">What I Designed</span>
+      <h2>End-to-end flows, not just screens.</h2>
+      <ul class="proj-list">
+        <li>Complete first-run experience flows for new users across iOS and Android</li>
+        <li>Prompt templates engineered for first-time success — contextual, specific, achievable</li>
+        <li>SKU-aware onboarding logic differentiating the paid non-enterprise and Premium experience</li>
+        <li>A repeatable onboarding system that other teams could plug into, not a one-off screen set</li>
+      </ul>
+    </div>
+
+
+    <!-- FINAL UI VIDEO -->
+    <div class="proj-video-wrap reveal">
+      <video class="proj-video" controls playsinline preload="metadata">
+        <source src="" type="video/mp4" />
+        Your browser does not support inline video.
+      </video>
+    </div>
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">Impact</span>
+      <h2>Onboarding became a measurable growth lever.</h2>
+
+      <div class="im-bento">
+
+        <!-- Hero: ~40K -->
+        <div class="im-bento-card im-bento-hero">
+          <div class="im-bento-eyebrow">Net new prompting users WoW</div>
+          <div class="im-bento-num">~40K</div>
+          <div class="im-bento-sub">Driven purely by onboarding improvements — no acquisition spend.</div>
+        </div>
+
+        <!-- Reversal -->
+        <div class="im-bento-card im-bento-reversal">
+          <div class="im-bento-icon">↗</div>
+          <div class="im-bento-label">Reversed the decline</div>
+          <div class="im-bento-sub">First-time prompting reversed its drop after earlier IA changes.</div>
+        </div>
+
+        <!-- Non-enterprise activation -->
+        <div class="im-bento-card im-bento-sku1">
+          <div class="im-bento-val">+1.6–1.8×</div>
+          <div class="im-bento-label">Non-enterprise paid users</div>
+          <div class="im-bento-sub">Week-1 Copilot Active users</div>
+        </div>
+
+        <!-- Premium activation -->
+        <div class="im-bento-card im-bento-sku2">
+          <div class="im-bento-val">+1.1–1.2×</div>
+          <div class="im-bento-label">Premium SKU</div>
+          <div class="im-bento-sub">Week-1 Copilot Active users</div>
+        </div>
+
+        <!-- Stable / guardrails -->
+        <div class="im-bento-card im-bento-stable">
+          <div class="im-bento-check">✓</div>
+          <div class="im-bento-label">Stable retention</div>
+          <div class="im-bento-sub">No negative signals. Consistent across Android &amp; iOS.</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- PROJECT NAV -->
+  <div class="proj-nav">
+    <div></div>
+    <a href="project-2.html" class="proj-nav-link proj-nav-link--next">
+      <span class="proj-nav-dir">Next Project →</span>
+      <span class="proj-nav-title">AI Previewer in M365 Copilot</span>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">© 2025 Adarsh Raj Shah. All rights reserved.</div>
+    <div class="footer-right">Designed &amp; built with care.</div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    const nav = document.getElementById('backNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
