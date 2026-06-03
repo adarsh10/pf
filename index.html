@@ -16,6 +16,7 @@
   </script>
 </head>
 <body>
+  <div id="page-loader"><div class="loader-dot"></div></div>
 
   <!-- NAV -->
   <nav class="nav">
@@ -110,22 +111,31 @@
       <article class="project-card">
         <div class="project-image">
           <div class="project-image-inner proj1-thumb">
-            <img src="Images/project-1/thumb.png" alt="" class="proj1-thumb-img" />
+            <img src="Images/proactive-assistance/thumb.png" alt="" class="proj1-thumb-img" />
           </div>
         </div>
         <div class="project-info">
-          <span class="project-num">01</span>
-          <div class="project-meta">
-            <span class="project-category">UX Design · Mobile</span>
-            <span class="project-year">2024</span>
-          </div>
-          <h3 class="project-name">New User Onboarding for M365 Copilot</h3>
-          <p class="project-desc">Redesigned the first-run experience for Copilot Mobile — turning a confusing intro into a guided first success that boosted new-user prompt submission and Week-1 retention.</p>
-          <a href="project-1.html" class="project-link">View Case Study →</a>
+          <h3 class="project-name">Proactive Assistance: Daily Brief and More</h3>
+          <p class="project-desc">Built a scalable UX framework for proactive AI nudges across Copilot, Outlook and Teams — shifting the product from reactive to ambient intelligence.</p>
+          <a href="proactive-assistance.html" class="project-link">View Case Study →</a>
         </div>
       </article>
 
       <!-- Project 2 -->
+      <article class="project-card">
+        <div class="project-image">
+          <div class="project-image-inner proj1-thumb">
+            <img src="Images/user-onboarding/thumb.png" alt="" class="proj1-thumb-img" />
+          </div>
+        </div>
+        <div class="project-info">
+          <h3 class="project-name">New User Onboarding for M365 Copilot</h3>
+          <p class="project-desc">Redesigned the first-run experience for Copilot Mobile — turning a confusing intro into a guided first success that boosted new-user prompt submission and Week-1 retention.</p>
+          <a href="user-onboarding.html" class="project-link">View Case Study →</a>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
       <article class="project-card">
         <div class="project-image">
           <div class="project-image-inner proj-bg-2">
@@ -146,47 +156,9 @@
           </div>
         </div>
         <div class="project-info">
-          <span class="project-num">02</span>
-          <div class="project-meta">
-            <span class="project-category">AI · Interaction Design</span>
-            <span class="project-year">2024</span>
-          </div>
           <h3 class="project-name">AI Previewer in M365 Copilot</h3>
           <p class="project-desc">Designed the Dynamic Action Bar — a persistent, context-aware Copilot entry point inside WXP previewers that lifted AI engagement from ~2% to ~15%.</p>
-          <a href="project-2.html" class="project-link">View Case Study →</a>
-        </div>
-      </article>
-
-      <!-- Project 3 -->
-      <article class="project-card">
-        <div class="project-image">
-          <div class="project-image-inner proj-bg-3">
-            <div class="mock-proactive">
-              <div class="mock-pa-card">
-                <div class="mock-pa-eyebrow"></div>
-                <div class="mock-pa-title"></div>
-                <div class="mock-pa-sub"></div>
-                <div class="mock-pa-actions">
-                  <div class="mock-pa-btn mock-pa-btn--primary"></div>
-                  <div class="mock-pa-btn"></div>
-                </div>
-              </div>
-              <div class="mock-pa-card mock-pa-card--faded">
-                <div class="mock-pa-eyebrow"></div>
-                <div class="mock-pa-title mock-pa-title--short"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="project-info">
-          <span class="project-num">03</span>
-          <div class="project-meta">
-            <span class="project-category">AI · Systems Design</span>
-            <span class="project-year">2024</span>
-          </div>
-          <h3 class="project-name">Proactive Assistance in M365 Mobile</h3>
-          <p class="project-desc">Built a scalable UX framework for proactive AI nudges across Copilot, Outlook and Teams — shifting the product from reactive to ambient intelligence.</p>
-          <a href="project-3.html" class="project-link">View Case Study →</a>
+          <a href="ai-browser.html" class="project-link">View Case Study →</a>
         </div>
       </article>
 
@@ -260,5 +232,12 @@
   </div>
 
   <script src="main.js"></script>
+  <script>
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', () => {
+        window.location.href = card.querySelector('.project-link').href;
+      });
+    });
+  </script>
 </body>
 </html>

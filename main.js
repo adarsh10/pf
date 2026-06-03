@@ -1,3 +1,15 @@
+// ── Page loader ───────────────────────────────────────────────────
+(function () {
+  const loader = document.getElementById('page-loader');
+  if (!loader) return;
+  const start = Date.now();
+  window.addEventListener('load', function () {
+    const elapsed = Date.now() - start;
+    const remaining = Math.max(0, 1000 - elapsed);
+    setTimeout(() => loader.classList.add('hidden'), remaining);
+  });
+})();
+
 // ── Theme toggle ──────────────────────────────────────────────────
 const themeToggle = document.getElementById('themeToggle');
 if (themeToggle) {

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proactive Assistance in M365 Mobile — Adarsh Raj Shah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    })();
+  </script>
+</head>
+<body class="project-page">
+  <div id="page-loader"><div class="loader-dot"></div></div>
+
+  <!-- BACK NAV -->
+  <nav class="back-nav" id="backNav">
+    <a href="index.html#work" class="back-link">
+      <span class="back-link-arrow">←</span> Back to Work
+    </a>
+    <a href="index.html" class="back-nav-logo">Adarssssh.</a>
+    <div class="back-nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="proj-hero">
+    <div class="proj-hero-content">
+      <!-- Visual banner -->
+      <div class="proj-banner proj-banner--img-hero">
+        <img src="Images/proactive-assistance/proactive-banner.png" alt="Proactive Assistance — Daily Brief and More" class="proj-banner-hero-img" />
+      </div>
+      <div class="proj-hero-tags">
+        <span class="proj-tag proj-tag--accent">AI Design</span>
+        <span class="proj-tag">Proactive Assistance</span>
+        <span class="proj-tag">Growth</span>
+        <span class="proj-tag">2026</span>
+      </div>
+      <h1 class="proj-hero-title">Proactive Assistance: Daily Brief and More</h1>
+      <p class="proj-hero-sub">Designed a proactive mobile experience that delivers timely daily briefs and action cues through smart entry points — helping users start their day with clarity and momentum.</p>
+      <div class="proj-hero-meta">
+        <div class="proj-meta-item">
+          <div class="proj-meta-label">Role</div>
+          <div class="proj-meta-value">Senior Product Designer</div>
+        </div>
+        <div class="proj-meta-item">
+          <div class="proj-meta-label">Platform</div>
+          <div class="proj-meta-value">M365 Copilot · Outlook · Teams Mobile</div>
+        </div>
+        <div class="proj-meta-item">
+          <div class="proj-meta-label">Scope</div>
+          <div class="proj-meta-value">UX Framework · Flows · End-to-End Ownership</div>
+        </div>
+        <div class="proj-meta-item">
+          <div class="proj-meta-label">Team</div>
+          <div class="proj-meta-value">PM · Engineering · Data · Design</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <div class="proj-body">
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">The Problem</span>
+      <h2>Work on mobile starts fragmented — and tools stay out of the way.</h2>
+      <p>Users jump across emails, chats, and meetings just to understand their day. Even simple planning becomes effort-heavy when context is scattered across five different apps. Most tools remain reactive — they wait to be opened instead of helping users prepare.</p>
+      <div class="proj-callout">
+        <p>"The problem wasn't missing information — it was that none of it surfaced when it actually mattered."</p>
+      </div>
+    </div>
+
+    <div class="proj-img-box reveal">
+      <div class="rc-wrap">
+        <div class="rc-head">
+          <span class="rc-eyebrow">User Research</span>
+          <h3 class="rc-title">Daily Context Overhead</h3>
+          <p class="rc-subtitle">How much effort users spent before their first productive action each morning</p>
+        </div>
+
+        <div class="rc-group">
+          <div class="rc-group-label">Context Gathering</div>
+          <div class="rc-segment">
+            <div class="rc-seg-name">Apps checked before acting</div>
+            <div class="rc-bar rc-bar--o" style="--p:80">
+              <span class="rc-bar-label">Avg. count</span>
+              <div class="rc-track"><div class="rc-fill"></div></div>
+              <span class="rc-pct">4+</span>
+            </div>
+          </div>
+          <div class="rc-segment">
+            <div class="rc-seg-name">Context switches in first 30 min</div>
+            <div class="rc-bar rc-bar--o" style="--p:60">
+              <span class="rc-bar-label">Avg. count</span>
+              <div class="rc-track"><div class="rc-fill"></div></div>
+              <span class="rc-pct">6+</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rc-group">
+          <div class="rc-group-label">User Sentiment</div>
+          <div class="rc-segment">
+            <div class="rc-seg-name">Felt "prepared" at start of day</div>
+            <div class="rc-bar rc-bar--i" style="--p:22">
+              <span class="rc-bar-label">% users</span>
+              <div class="rc-track"><div class="rc-fill"></div></div>
+              <span class="rc-pct">22%</span>
+            </div>
+          </div>
+          <div class="rc-segment">
+            <div class="rc-seg-name">Missed at least one important item</div>
+            <div class="rc-bar rc-bar--o" style="--p:68">
+              <span class="rc-bar-label">% users</span>
+              <div class="rc-track"><div class="rc-fill"></div></div>
+              <span class="rc-pct">68%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">The Goal</span>
+      <h2>Bring clarity upfront — surface what matters, guide users towards action.</h2>
+      <p>The aim was to make the product feel like an assistant that prepares you, not a tool you have to figure out. That meant surfacing relevant context at the right moment and making the path to action obvious.</p>
+      <ul class="proj-list">
+        <li>Help users act faster — not just stay more informed</li>
+        <li>Make proactive help feel timely, lightweight, and easy to dismiss</li>
+        <li>Create a consistent habit through a daily brief at a chosen time</li>
+        <li>Build a reusable surface other scenarios could plug into</li>
+      </ul>
+    </div>
+
+    <div class="proj-img-box reveal">
+      <div class="gc-wrap">
+        <div class="gc-head">
+          <span class="gc-eyebrow">Goals &amp; Success Metrics</span>
+          <h3 class="gc-title">From Reactive to Proactive</h3>
+          <p class="gc-subtitle">Shifting how users experience the start of their workday on mobile</p>
+        </div>
+
+        <div class="gc-compare">
+          <div class="gc-compare-item gc-compare-item--now">
+            <span class="gc-badge">Before</span>
+            <div class="gc-compare-val">Reactive</div>
+            <div class="gc-compare-desc">Users hunt across apps to piece together their day</div>
+          </div>
+          <div class="gc-compare-arrow">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M5 14h18M17 8l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="gc-compare-item gc-compare-item--goal">
+            <span class="gc-badge">After</span>
+            <div class="gc-compare-val">Prepared</div>
+            <div class="gc-compare-desc">Relevant context surfaces — users act, not hunt</div>
+          </div>
+        </div>
+
+        <div class="gc-impact">
+          <div class="gc-impact-eyebrow">Primary Success Signal</div>
+          <div class="gc-impact-content">
+            <div class="gc-impact-val">~2:1</div>
+            <div class="gc-impact-meta">
+              <div class="gc-impact-unit">Positive feedback ratio</div>
+              <div class="gc-impact-desc">Early internal rollout feedback — users reported better clarity and faster prioritisation at the start of their day</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">My Approach</span>
+      <h2>A system of moments, not a single feature.</h2>
+      <p>Proactive assistance appears contextually across the day — starting with a daily brief and evolving into action-driven prompts, optimised for quick scanning on mobile. Rather than designing individual moments in isolation, I built a minimal, repeatable framework every proactive experience had to follow.</p>
+      <div class="proj-callout">
+        <p>Trigger → Actionable Response → Feedback</p>
+      </div>
+      <p>This gave PMs, engineers and designers a shared language and a clear bar for what "good" looks like — preventing one-off designs and ensuring quality consistency across apps and agent types.</p>
+    </div>
+
+    <div class="proj-img-box reveal">
+      <div class="proj-img-ph">
+        <span>Engagement loop diagram</span>
+      </div>
+    </div>
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">Key Design Decisions</span>
+      <h2>Timing, simplicity, and scalability — in that order.</h2>
+      <div class="proj-decisions">
+        <div class="proj-decision">
+          <div class="proj-decision-num">01</div>
+          <div>
+            <h3>Action-first content</h3>
+            <p>Delivered only when relevant — always answering "What can I do right now?" No clear action, no moment shipped.</p>
+          </div>
+        </div>
+        <div class="proj-decision">
+          <div class="proj-decision-num">02</div>
+          <div>
+            <h3>Familiar response patterns</h3>
+            <p>Emails surface like inbox summaries, meetings follow calendar layouts. Familiarity lowers cognitive load — no learning curve needed.</p>
+          </div>
+        </div>
+        <div class="proj-decision">
+          <div class="proj-decision-num">03</div>
+          <div>
+            <h3>Designed to scale</h3>
+            <p>Multiple scenarios plug into one surface without added complexity — daily brief, meeting prep, catch-ups, agent actions. One entry point, infinite use cases.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design Explorations — full-bleed marquee -->
+    <div class="explore-bleed reveal">
+      <div class="explore-label-row">
+        <span class="proj-section-label">Design Explorations</span>
+        <p class="explore-desc">Iterations across entry strategies, response formats, and content depth — balancing usefulness with intrusiveness.</p>
+      </div>
+      <div class="explore-marquee">
+        <div class="explore-track">
+          <div class="explore-card"><img src="Images/proactive-assistance/ex1.png"  alt="Exploration 1"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/proactive-assistance/ex2.png"  alt="Exploration 2"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/proactive-assistance/ex3.png"  alt="Exploration 3"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/proactive-assistance/ex4.png"  alt="Exploration 4"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/proactive-assistance/ex5.png"  alt="Exploration 5"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/proactive-assistance/ex6.png"  alt="Exploration 6"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/proactive-assistance/ex7.png"  alt="Exploration 7"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/proactive-assistance/ex8.png"  alt="Exploration 8"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/proactive-assistance/ex9.png"  alt="Exploration 9"  loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/proactive-assistance/ex10.png" alt="Exploration 10" loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/proactive-assistance/ex11.png" alt="Exploration 11" loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/proactive-assistance/ex12.png" alt="Exploration 12" loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/proactive-assistance/ex13.png" alt="Exploration 13" loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/proactive-assistance/ex14.png" alt="Exploration 14" loading="lazy"/></div>
+          <div class="explore-card"><img src="Images/proactive-assistance/ex15.png" alt="Exploration 15" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex1.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex2.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex3.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex4.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex5.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex6.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex7.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex8.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex9.png"  alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex10.png" alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex11.png" alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex12.png" alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex13.png" alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex14.png" alt="" loading="lazy"/></div>
+          <div class="explore-card" aria-hidden="true"><img src="Images/proactive-assistance/ex15.png" alt="" loading="lazy"/></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">What I Designed</span>
+      <h2>Daily Brief, contextual Action Items — and the system beneath them.</h2>
+      <ul class="proj-list">
+        <li>Daily Brief and contextual Action Items that help users quickly understand and act on their day</li>
+        <li>Response templates following familiar patterns — inbox summaries, calendar layouts, people cues</li>
+        <li>A scalable entry surface (the chat pill) that hosts multiple proactive scenarios without redesign</li>
+        <li>Push notification strategy — scheduled vs promotional, with clear opt-in controls</li>
+        <li>Framework documentation and guidance used by 3+ partner teams across Copilot, Outlook and Teams</li>
+      </ul>
+    </div>
+
+    <div class="proj-subsection-label reveal">Trigger / Entry Point</div>
+    <!-- Trigger — Entry Points -->
+    <div class="proj-img-box reveal">
+      <div class="ep-grid">
+        <div class="ep-item">
+          <div class="ep-img-wrap">
+            <img src="Images/proactive-assistance/notification.png" alt="Push Notifications — promotional and scheduled" class="ep-img" />
+          </div>
+          <div class="ep-caption">
+            <h3 class="ep-title">Push Notifications</h3>
+            <p class="ep-desc">Promotional notifications are used lightly for discovery. Scheduled notifications let users receive a daily brief or action summary at a chosen time — creating a consistent habit without feeling invasive.</p>
+          </div>
+        </div>
+        <div class="ep-item">
+          <div class="ep-img-wrap">
+            <img src="Images/proactive-assistance/pill.png" alt="In-product Chat Pill entry point" class="ep-img" />
+          </div>
+          <div class="ep-caption">
+            <h3 class="ep-title">In-product Chat Pill</h3>
+            <p class="ep-desc">Within the product, the entry point sits in the chat screen. The first pill hosts the daily brief and other scenarios too. A subtle visual cue paired with haptic feedback makes discovery feel playful and natural.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-subsection-label reveal">Pill Discovery</div>
+    <div class="proj-video-wrap reveal">
+      <video class="proj-video" controls playsinline preload="metadata">
+        <source src="" type="video/mp4" />
+        Your browser does not support inline video.
+      </video>
+    </div>
+
+    <div class="proj-subsection-label reveal">Rich Response</div>
+    <!-- Response view -->
+    <div class="proj-img-box reveal">
+      <div class="ep-grid">
+        <div class="ep-item">
+          <div class="proj-img-ph ep-ph"></div>
+          <div class="ep-caption">
+            <h3 class="ep-title">Daily Brief</h3>
+            <p class="ep-desc">Meeting summaries, email highlights, and people cues — surfaced in a scannable layout optimised for the start of your day.</p>
+          </div>
+        </div>
+        <div class="ep-item">
+          <div class="proj-img-ph ep-ph"></div>
+          <div class="ep-caption">
+            <h3 class="ep-title">Action Items on Me</h3>
+            <p class="ep-desc">Tasks assigned across email, chat, and meetings — consolidated into a single actionable list with source context and quick actions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-subsection-label reveal">Schedule: Repeat Usage</div>
+    <!-- Schedule UX -->
+    <div class="proj-img-box reveal">
+      <img src="Images/proactive-assistance/schedule-ux.png" alt="Schedule UX — daily brief scheduling interface" class="proj-full-img" />
+    </div>
+
+    <!-- End-to-end flow video -->
+    <div class="proj-video-wrap reveal">
+      <video class="proj-video" controls playsinline preload="metadata">
+        <source src="" type="video/mp4" />
+        Your browser does not support inline video.
+      </video>
+    </div>
+
+    <div class="proj-subsection-label reveal">Scalable Surface</div>
+    <div class="proj-img-box reveal">
+      <div class="proj-img-ph"></div>
+    </div>
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">Impact</span>
+      <h2>Users felt more prepared — not just more informed.</h2>
+
+      <div class="im-bento">
+
+        <div class="im-bento-card im-bento-hero">
+          <div class="im-bento-eyebrow">Early internal rollout feedback signal</div>
+          <div class="im-bento-num">~2:1</div>
+          <div class="im-bento-sub">Positive feedback ratio — users reported better clarity and faster prioritisation at the start of their day.</div>
+        </div>
+
+        <div class="im-bento-card im-bento-reversal">
+          <div class="im-bento-icon">↗</div>
+          <div class="im-bento-label">Better clarity</div>
+          <div class="im-bento-sub">Users arrived at their day's priorities faster — without opening multiple apps.</div>
+        </div>
+
+        <div class="im-bento-card im-bento-sku1">
+          <div class="im-bento-val">3+</div>
+          <div class="im-bento-label">Partner teams</div>
+          <div class="im-bento-sub">Adopted the framework across Copilot, Outlook and Teams</div>
+        </div>
+
+        <div class="im-bento-card im-bento-sku2">
+          <div class="im-bento-val">∞</div>
+          <div class="im-bento-label">Scalable surface</div>
+          <div class="im-bento-sub">Same entry point supports daily brief, meeting prep, catch-ups, and more</div>
+        </div>
+
+        <div class="im-bento-card im-bento-stable">
+          <div class="im-bento-check">✓</div>
+          <div class="im-bento-label">Timing + relevance</div>
+          <div class="im-bento-sub">When both come together, users feel prepared — not interrupted.</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- PROJECT NAV -->
+  <div class="proj-nav">
+    <div></div>
+    <a href="user-onboarding.html" class="proj-nav-link proj-nav-link--next">
+      <span class="proj-nav-dir">Next Project →</span>
+      <span class="proj-nav-title">New User Onboarding for M365 Copilot</span>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">© 2025 Adarsh Raj Shah. All rights reserved.</div>
+    <div class="footer-right">Designed &amp; built with care.</div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    const nav = document.getElementById('backNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  </script>
+</body>
+</html>
