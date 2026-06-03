@@ -888,6 +888,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
 
 .project-year { order: 2; }
 
+
 .project-name {
   font-family: var(--font-sans);
   font-size: clamp(24px, 2.8vw, 40px);
@@ -917,7 +918,14 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
   transition: gap 0.2s;
 }
 
-.project-link:hover { gap: 12px; }
+/* Stretched link — makes the whole card clickable */
+.project-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.project-card:hover .project-link { gap: 12px; }
 
 /* Project card background gradients */
 .proj-bg-1 { background: #141414; }
