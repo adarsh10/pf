@@ -133,7 +133,7 @@ img { display: block; max-width: 100%; }
 }
 
 .nav-logo {
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-size: 22px;
   font-weight: 400;
   letter-spacing: -0.01em;
@@ -1376,7 +1376,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-size: 20px;
   font-weight: 400;
   color: var(--black);

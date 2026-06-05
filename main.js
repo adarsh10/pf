@@ -268,53 +268,54 @@ if (document.getElementById('openStories')) {
     const track = marquee.querySelector('.explore-track');
     if (!track) return;
 
-    const DURATION = 55000; // must match CSS animation duration in ms
+    const DURATION = 55000; // ms — must match CSS animation-duration
 
     let isDragging = false;
     let startX = 0;
     let startTranslate = 0;
     let currentTranslate = 0;
 
-    function getCurrentTranslate() {
-      const style = window.getComputedStyle(track);
-      const matrix = new DOMMatrix(style.transform);
-      return matrix.m41; // translateX in px
+    // Read actual rendered translateX from the live animation
+    function getLiveTranslate() {
+      const matrix = new DOMMatrix(getComputedStyle(track).transform);
+      return matrix.m41;
     }
 
-    function pauseAt(px) {
-      track.style.animationPlayState = 'paused';
+    // Freeze track in place: kill animation, lock transform
+    function freeze(px) {
+      track.style.animation = 'none';
       track.style.transform = `translateX(${px}px)`;
     }
 
+    // Resume animation from a given px offset
     function resumeFrom(px) {
-      // Calculate the fraction through the animation (0→1 maps 0→-halfWidth)
       const halfWidth = track.scrollWidth / 2;
-      // Normalise px into the 0..-halfWidth range (wrap if user dragged far)
-      let norm = ((px % -halfWidth) - halfWidth) % -halfWidth;
-      if (norm > 0) norm -= halfWidth;
-      const fraction = norm / -halfWidth; // 0..1
+      // Wrap into valid range [−halfWidth, 0]
+      let pos = px % -halfWidth;
+      if (pos > 0) pos -= halfWidth;
+      const fraction = pos / -halfWidth; // 0..1
       const delay = -(fraction * DURATION);
 
       track.style.transform = '';
-      track.style.animationDelay = `${delay}ms`;
-      track.style.animationPlayState = 'running';
+      track.style.animation = `explore-slide ${DURATION}ms linear ${delay}ms infinite`;
     }
 
-    function onDragStart(clientX) {
+    function onStart(clientX) {
       isDragging = true;
       startX = clientX;
-      startTranslate = getCurrentTranslate();
+      startTranslate = getLiveTranslate(); // capture before freezing
+      currentTranslate = startTranslate;
+      freeze(startTranslate);
       marquee.classList.add('is-dragging');
     }
 
-    function onDragMove(clientX) {
+    function onMove(clientX) {
       if (!isDragging) return;
-      const delta = clientX - startX;
-      currentTranslate = startTranslate + delta;
-      pauseAt(currentTranslate);
+      currentTranslate = startTranslate + (clientX - startX);
+      track.style.transform = `translateX(${currentTranslate}px)`;
     }
 
-    function onDragEnd() {
+    function onEnd() {
       if (!isDragging) return;
       isDragging = false;
       marquee.classList.remove('is-dragging');
@@ -322,14 +323,14 @@ if (document.getElementById('openStories')) {
     }
 
     // Mouse
-    marquee.addEventListener('mousedown', e => { e.preventDefault(); onDragStart(e.clientX); });
-    window.addEventListener('mousemove', e => { if (isDragging) onDragMove(e.clientX); });
-    window.addEventListener('mouseup', () => { if (isDragging) onDragEnd(); });
+    marquee.addEventListener('mousedown', e => { e.preventDefault(); onStart(e.clientX); });
+    window.addEventListener('mousemove', e => { onMove(e.clientX); });
+    window.addEventListener('mouseup', onEnd);
 
     // Touch
-    marquee.addEventListener('touchstart', e => { onDragStart(e.touches[0].clientX); }, { passive: true });
-    marquee.addEventListener('touchmove', e => { if (isDragging) { e.preventDefault(); onDragMove(e.touches[0].clientX); } }, { passive: false });
-    marquee.addEventListener('touchend', () => { if (isDragging) onDragEnd(); });
+    marquee.addEventListener('touchstart', e => { onStart(e.touches[0].clientX); }, { passive: true });
+    marquee.addEventListener('touchmove', e => { if (isDragging) { e.preventDefault(); onMove(e.touches[0].clientX); } }, { passive: false });
+    marquee.addEventListener('touchend', onEnd);
   }
 
   function setup() {
