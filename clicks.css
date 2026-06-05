@@ -297,8 +297,8 @@ video.lightbox-media {
 }
 
 iframe.lightbox-iframe {
-  width: min(90vw, 1280px);
-  height: min(80vh, 720px);
+  width: min(95vw, 1600px);
+  height: min(90vh, 900px);
   border: none;
   border-radius: 6px;
   background: #000;
