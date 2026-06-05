@@ -296,6 +296,17 @@ video.lightbox-media {
   background: #000;
 }
 
+iframe.lightbox-iframe {
+  width: min(90vw, 1280px);
+  height: min(80vh, 720px);
+  border: none;
+  border-radius: 6px;
+  background: #000;
+  object-fit: unset;
+  max-width: unset;
+  max-height: unset;
+}
+
 .lightbox-close {
   position: absolute;
   top: 20px;

@@ -56,6 +56,17 @@
       <!-- Masonry Grid -->
       <div class="clicks-grid" id="clicksGrid">
 
+        <div class="click-item click-item--youtube" data-type="youtube" data-src="https://www.youtube.com/embed/N4JdMdmfxQg?autoplay=1&rel=0">
+          <img src="Clicks/27.png" alt="YouTube video" loading="lazy" />
+          <div class="click-hover">
+            <div class="click-hover-title">Bangkok Streets</div>
+            <div class="click-hover-sub">Short film · Thailand</div>
+          </div>
+          <div class="click-play-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+
         <div class="click-item" data-type="photo">
           <img src="Clicks/3.png" alt="Photo 3" loading="lazy" />
           <div class="click-hover">
@@ -376,7 +387,15 @@
         const item = visibleItems()[index];
         content.innerHTML = '';
 
-        if (item.dataset.type === 'video') {
+        if (item.dataset.type === 'youtube') {
+          const iframe = document.createElement('iframe');
+          iframe.src = item.dataset.src;
+          iframe.className = 'lightbox-media lightbox-iframe';
+          iframe.allow = 'autoplay; fullscreen';
+          iframe.allowFullscreen = true;
+          iframe.frameBorder = '0';
+          content.appendChild(iframe);
+        } else if (item.dataset.type === 'video') {
           const video = document.createElement('video');
           video.src = item.dataset.src;
           video.controls = true;
@@ -401,6 +420,8 @@
         document.body.style.overflow = '';
         const video = content.querySelector('video');
         if (video) video.pause();
+        const iframe = content.querySelector('iframe');
+        if (iframe) iframe.src = '';
         content.innerHTML = '';
         currentIndex = -1;
       }
