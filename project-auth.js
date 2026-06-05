@@ -6,8 +6,9 @@
  */
 (function () {
   const SESSION_KEY = 'pf_auth_v1';
-  // SHA-256 of "password123"
+  // SHA-256 of the password (secure contexts) or btoa fallback (HTTP)
   const PASSWORD_HASH = 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f';
+  const PASSWORD_FALLBACK = 'fallback:' + btoa('password123');
 
   // Already authenticated — do nothing
   if (sessionStorage.getItem(SESSION_KEY) === 'granted') return;
@@ -19,8 +20,12 @@
   document.head.appendChild(hideStyle);
 
   async function sha256(str) {
-    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    if (crypto && crypto.subtle) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+    // Fallback for non-secure contexts (HTTP): use btoa-based check
+    return 'fallback:' + btoa(str);
   }
 
   function buildOverlay() {
@@ -232,7 +237,7 @@
 
       const hash = await sha256(val);
 
-      if (hash === PASSWORD_HASH) {
+      if (hash === PASSWORD_HASH || hash === PASSWORD_FALLBACK) {
         unlock(overlay);
       } else {
         error.textContent = 'Incorrect password. Please try again.';
