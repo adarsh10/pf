@@ -159,6 +159,48 @@ const STORY_DATA = [
     gradient: 'linear-gradient(160deg, #150520 0%, #320a55 50%, #100a35 100%)',
     accent: '#f0abfc',
   },
+  {
+    year: '2020', num: '10',
+    title: 'Building the Foundation',
+    desc: 'Helped build the first mobile design system for Microsoft 365 — a shared language of components, tokens, and patterns that gave every team a head start.',
+    gradient: 'linear-gradient(160deg, #0a1a10 0%, #0f3020 55%, #081510 100%)',
+    accent: '#4ade80',
+  },
+  {
+    year: '2021', num: '11',
+    title: 'iPad, Unlocked',
+    desc: 'Brought the unified Office app to iPad — adapting mobile-first flows for a larger canvas and unlocking a richer productivity experience for millions of tablet users.',
+    gradient: 'linear-gradient(160deg, #0a1530 0%, #102040 55%, #080f20 100%)',
+    accent: '#93c5fd',
+  },
+  {
+    year: '2021', num: '12',
+    title: 'Quick Actions',
+    desc: 'Designed the Quick Action Bar — a persistent, context-aware toolbar that surfaced the right actions at the right moment, cutting friction across M365 apps.',
+    gradient: 'linear-gradient(160deg, #1a0a08 0%, #3a1008 55%, #180808 100%)',
+    accent: '#fb923c',
+  },
+  {
+    year: '2022', num: '13',
+    title: 'Motion, Intentional',
+    desc: 'Introduced Lottie animations into M365 mobile — bringing life to loading states, onboarding moments, and empty screens without adding a gram of bloat.',
+    gradient: 'linear-gradient(160deg, #0a1020 0%, #1a0a40 55%, #100820 100%)',
+    accent: '#c084fc',
+  },
+  {
+    year: '2023', num: '14',
+    title: 'Home Base',
+    desc: 'Redesigned the Home tab — the first screen millions see every day. Built a personalised, AI-aware surface that surfaced what mattered before users even thought to look.',
+    gradient: 'linear-gradient(160deg, #080f18 0%, #0f1a30 55%, #060c18 100%)',
+    accent: '#38bdf8',
+  },
+  {
+    year: '2022–24', num: '15',
+    title: 'Three Names, One Vision',
+    desc: 'Led design through three major rebrands — Office to Microsoft 365 to Copilot. Each shift had to feel seamless to hundreds of millions of existing users while signalling something entirely new.',
+    gradient: 'linear-gradient(160deg, #120820 0%, #280a48 55%, #100820 100%)',
+    accent: '#e879f9',
+  },
 ];
 
 class StoryViewer {

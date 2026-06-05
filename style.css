@@ -634,7 +634,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
 .sv-progress-row {
   position: absolute;
   top: 0; left: 0; right: 0;
-  padding: 14px 12px 0;
+  padding: 20px 16px 0;
   display: flex;
   gap: 4px;
   z-index: 10;
@@ -656,7 +656,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
 /* Header */
 .sv-top-bar {
   position: absolute;
-  top: 26px; left: 0; right: 0;
+  top: 34px; left: 0; right: 0;
   padding: 0 16px;
   display: flex;
   align-items: center;
