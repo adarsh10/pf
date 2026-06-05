@@ -100,8 +100,14 @@
 .click-item img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.click-item {
+  aspect-ratio: 2 / 3;
 }
 
 /* Aspect ratio variants for masonry height variation */
