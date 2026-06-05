@@ -55,15 +55,11 @@
         </div>
         <div class="proj-meta-item">
           <div class="proj-meta-label">Platform</div>
-          <div class="proj-meta-value">M365 Copilot · Outlook · Teams Mobile</div>
+          <div class="proj-meta-value">iOS · Android</div>
         </div>
         <div class="proj-meta-item">
           <div class="proj-meta-label">Scope</div>
           <div class="proj-meta-value">UX Framework · Flows · End-to-End Ownership</div>
-        </div>
-        <div class="proj-meta-item">
-          <div class="proj-meta-label">Team</div>
-          <div class="proj-meta-value">PM · Engineering · Data · Design</div>
         </div>
       </div>
     </div>
@@ -191,9 +187,8 @@
     </div>
 
     <div class="proj-img-box reveal">
-      <div class="proj-img-ph">
-        <span>Engagement loop diagram</span>
-      </div>
+      <img src="Images/proactive-assistance/engagement-loop.png" alt="Engagement loop diagram" class="proj-full-img theme-img-light" />
+      <img src="Images/proactive-assistance/engagement-loop-dark.png" alt="Engagement loop diagram" class="proj-full-img theme-img-dark" />
     </div>
 
     <div class="proj-section reveal">
@@ -304,9 +299,10 @@
     </div>
 
     <div class="proj-subsection-label reveal">Pill Discovery</div>
+    <p class="proj-subsection-desc reveal">An animation was introduced in the first pill that reveals the scenario icons on load — drawing the eye naturally. This is paired with haptic feedback (vibration) to add a tactile layer of discovery, making the entry point feel alive without being intrusive.</p>
     <div class="proj-video-wrap reveal">
-      <video class="proj-video" controls playsinline preload="metadata">
-        <source src="" type="video/mp4" />
+      <video class="proj-video" controls playsinline preload="metadata" muted>
+        <source src="Videos/proactive-discovery.mov" type="video/mp4" />
         Your browser does not support inline video.
       </video>
     </div>
@@ -316,14 +312,16 @@
     <div class="proj-img-box reveal">
       <div class="ep-grid">
         <div class="ep-item">
-          <div class="proj-img-ph ep-ph"></div>
+          <img src="Images/proactive-assistance/daily-brief-response.png" alt="Daily Brief response" class="response-img theme-img-light" style="width:100%;height:auto;border-radius:8px;" />
+          <img src="Images/proactive-assistance/daily-brief-response-dark.png" alt="Daily Brief response" class="response-img theme-img-dark" style="width:100%;height:auto;border-radius:8px;" />
           <div class="ep-caption">
             <h3 class="ep-title">Daily Brief</h3>
             <p class="ep-desc">Meeting summaries, email highlights, and people cues — surfaced in a scannable layout optimised for the start of your day.</p>
           </div>
         </div>
         <div class="ep-item">
-          <div class="proj-img-ph ep-ph"></div>
+          <img src="Images/proactive-assistance/action-items-response.png" alt="Action Items response" class="response-img theme-img-light" style="width:100%;height:auto;border-radius:8px;" />
+          <img src="Images/proactive-assistance/action-items-response-dark.png" alt="Action Items response" class="response-img theme-img-dark" style="width:100%;height:auto;border-radius:8px;" />
           <div class="ep-caption">
             <h3 class="ep-title">Action Items on Me</h3>
             <p class="ep-desc">Tasks assigned across email, chat, and meetings — consolidated into a single actionable list with source context and quick actions.</p>
@@ -338,17 +336,20 @@
       <img src="Images/proactive-assistance/schedule-ux.png" alt="Schedule UX — daily brief scheduling interface" class="proj-full-img" />
     </div>
 
-    <!-- End-to-end flow video -->
+    <div class="proj-subsection-label reveal">End-to-End Flow</div>
     <div class="proj-video-wrap reveal">
-      <video class="proj-video" controls playsinline preload="metadata">
-        <source src="" type="video/mp4" />
+      <video class="proj-video" controls playsinline preload="metadata" muted>
+        <source src="Videos/proactive-end-to-end.mov" type="video/mp4" />
         Your browser does not support inline video.
       </video>
     </div>
 
     <div class="proj-subsection-label reveal">Scalable Surface</div>
-    <div class="proj-img-box reveal">
-      <div class="proj-img-ph"></div>
+    <div class="proj-video-wrap reveal">
+      <video class="proj-video" controls playsinline preload="metadata" muted>
+        <source src="Videos/proactive-scaling.mov" type="video/mp4" />
+        Your browser does not support inline video.
+      </video>
     </div>
 
     <div class="proj-section reveal">
@@ -414,6 +415,21 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 20);
     }, { passive: true });
+
+
+
+    document.querySelectorAll('video.proj-video').forEach(video => {
+      let playCount = 0;
+      video.addEventListener('ended', () => {
+        playCount++;
+        if (playCount < 3) {
+          video.currentTime = 0;
+          video.play();
+        } else {
+          playCount = 0;
+        }
+      });
+    });
   </script>
 </body>
 </html>
