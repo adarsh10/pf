@@ -408,7 +408,9 @@
     function applyFilter(filter) {
       filterBtns.forEach(b => b.classList.toggle('cf-btn--active', b.dataset.filter === filter));
       document.querySelectorAll('.click-item').forEach(item => {
-        item.style.display = (filter === 'all' || item.dataset.type === filter) ? '' : 'none';
+        const type = item.dataset.type;
+        const match = filter === 'all' || type === filter || (filter === 'video' && type === 'youtube');
+        item.style.display = match ? '' : 'none';
       });
     }
 
