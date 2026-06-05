@@ -3065,8 +3065,8 @@ html[data-theme="light"] .gc-compare-item { background: rgba(0,0,0,0.04); }
   animation: explore-slide 55s linear infinite;
 }
 
-.explore-marquee:hover .explore-track {
-  animation-play-state: paused;
+.explore-marquee:hover:not(.is-dragging) .explore-track {
+  animation-play-state: paused !important;
 }
 
 .explore-marquee { cursor: grab; }
