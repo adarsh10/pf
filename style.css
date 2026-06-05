@@ -3069,6 +3069,11 @@ html[data-theme="light"] .gc-compare-item { background: rgba(0,0,0,0.04); }
   animation-play-state: paused;
 }
 
+.explore-marquee { cursor: grab; }
+.explore-marquee.is-dragging { cursor: grabbing; }
+.explore-marquee.is-dragging .explore-track { animation-play-state: paused; }
+.explore-marquee.is-dragging .explore-card { pointer-events: none; }
+
 @keyframes explore-slide {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }

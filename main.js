@@ -262,3 +262,84 @@ if (document.getElementById('openStories')) {
   const storyViewer = new StoryViewer(STORY_DATA);
 }
 
+// ── Draggable explore marquee ─────────────────────────────────────
+(function () {
+  function initDraggable(marquee) {
+    const track = marquee.querySelector('.explore-track');
+    if (!track) return;
+
+    const DURATION = 55000; // must match CSS animation duration in ms
+
+    let isDragging = false;
+    let startX = 0;
+    let startTranslate = 0;
+    let currentTranslate = 0;
+
+    function getCurrentTranslate() {
+      const style = window.getComputedStyle(track);
+      const matrix = new DOMMatrix(style.transform);
+      return matrix.m41; // translateX in px
+    }
+
+    function pauseAt(px) {
+      track.style.animationPlayState = 'paused';
+      track.style.transform = `translateX(${px}px)`;
+    }
+
+    function resumeFrom(px) {
+      // Calculate the fraction through the animation (0→1 maps 0→-halfWidth)
+      const halfWidth = track.scrollWidth / 2;
+      // Normalise px into the 0..-halfWidth range (wrap if user dragged far)
+      let norm = ((px % -halfWidth) - halfWidth) % -halfWidth;
+      if (norm > 0) norm -= halfWidth;
+      const fraction = norm / -halfWidth; // 0..1
+      const delay = -(fraction * DURATION);
+
+      track.style.transform = '';
+      track.style.animationDelay = `${delay}ms`;
+      track.style.animationPlayState = 'running';
+    }
+
+    function onDragStart(clientX) {
+      isDragging = true;
+      startX = clientX;
+      startTranslate = getCurrentTranslate();
+      marquee.classList.add('is-dragging');
+    }
+
+    function onDragMove(clientX) {
+      if (!isDragging) return;
+      const delta = clientX - startX;
+      currentTranslate = startTranslate + delta;
+      pauseAt(currentTranslate);
+    }
+
+    function onDragEnd() {
+      if (!isDragging) return;
+      isDragging = false;
+      marquee.classList.remove('is-dragging');
+      resumeFrom(currentTranslate);
+    }
+
+    // Mouse
+    marquee.addEventListener('mousedown', e => { e.preventDefault(); onDragStart(e.clientX); });
+    window.addEventListener('mousemove', e => { if (isDragging) onDragMove(e.clientX); });
+    window.addEventListener('mouseup', () => { if (isDragging) onDragEnd(); });
+
+    // Touch
+    marquee.addEventListener('touchstart', e => { onDragStart(e.touches[0].clientX); }, { passive: true });
+    marquee.addEventListener('touchmove', e => { if (isDragging) { e.preventDefault(); onDragMove(e.touches[0].clientX); } }, { passive: false });
+    marquee.addEventListener('touchend', () => { if (isDragging) onDragEnd(); });
+  }
+
+  function setup() {
+    document.querySelectorAll('.explore-marquee').forEach(initDraggable);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setup);
+  } else {
+    setup();
+  }
+})();
+
