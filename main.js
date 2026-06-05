@@ -147,7 +147,7 @@ class StoryViewer {
     this.raf     = null;
     this.startTime = null;
     this.elapsed   = 0;
-    this.duration  = 5000;
+    this.duration  = 10000;
 
     this.el          = document.getElementById('storyViewer');
     this.progressRow = document.getElementById('svProgressRow');
@@ -166,13 +166,11 @@ class StoryViewer {
 
     this.slideArea.innerHTML = this.data.map((s, i) =>
       `<div class="sv-slide${i === 0 ? ' is-active' : ''}" data-idx="${i}" style="background:${s.gradient}">
-        <div class="sv-bg-year">${s.year}</div>
         <div class="sv-slide-inner">
           <div class="sv-slide-num">
             <span class="sv-dot" style="background:${s.accent}"></span>
             ${s.num} / ${String(this.data.length).padStart(2, '0')}
           </div>
-          <div class="sv-slide-year">${s.year}</div>
           <h2 class="sv-slide-title">${s.title}</h2>
           <p class="sv-slide-desc">${s.desc}</p>
         </div>
