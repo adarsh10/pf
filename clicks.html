@@ -245,6 +245,17 @@
   </footer>
 
   <script>
+    // Hide page loader
+    (function() {
+      const loader = document.getElementById('page-loader');
+      if (!loader) return;
+      const start = Date.now();
+      window.addEventListener('load', function() {
+        const remaining = Math.max(0, 600 - (Date.now() - start));
+        setTimeout(() => loader.classList.add('hidden'), remaining);
+      });
+    })();
+
     // Theme toggle
     const themeToggle = document.getElementById('themeToggle');
     if (themeToggle) {
