@@ -37,54 +37,14 @@
   <section class="proj-hero">
     <div class="proj-hero-content">
       <!-- Visual banner -->
-      <div class="proj-banner proj-bg-2">
-        <div class="proj-banner-inner">
-          <div class="proj-banner-doc">
-            <div class="pbd-header">
-              <div class="pbd-dot"></div>
-              <div class="pbd-dot"></div>
-              <div class="pbd-dot"></div>
-            </div>
-            <div class="pbd-body">
-              <div class="pbd-line"></div>
-              <div class="pbd-line pbd-line--s"></div>
-              <div class="pbd-line"></div>
-              <div class="pbd-line pbd-line--m"></div>
-              <div class="pbd-line pbd-line--s"></div>
-              <div class="pbd-line"></div>
-            </div>
-            <div class="pbd-dab">
-              <div class="pbd-chip pbd-chip--ai">✦ Summarise</div>
-              <div class="pbd-chip">Ask</div>
-              <div class="pbd-chip">Draft</div>
-              <div class="pbd-chip">Share</div>
-            </div>
-          </div>
-          <div class="proj-banner-doc" style="opacity:0.45; transform: translateY(20px) scale(0.93);">
-            <div class="pbd-header">
-              <div class="pbd-dot"></div>
-              <div class="pbd-dot"></div>
-              <div class="pbd-dot"></div>
-            </div>
-            <div class="pbd-body">
-              <div class="pbd-line"></div>
-              <div class="pbd-line pbd-line--m"></div>
-              <div class="pbd-line pbd-line--s"></div>
-              <div class="pbd-line"></div>
-            </div>
-            <div class="pbd-dab">
-              <div class="pbd-chip pbd-chip--ai">✦ Explain</div>
-              <div class="pbd-chip">Edit</div>
-              <div class="pbd-chip">Open</div>
-            </div>
-          </div>
-        </div>
+      <div class="proj-banner proj-bg-2" style="padding:0;overflow:hidden;">
+        <img src="Images/previewer-banner.png" alt="AI Previewer banner" style="width:100%;height:100%;object-fit:cover;display:block;" />
       </div>
       <div class="proj-hero-tags">
         <span class="proj-tag proj-tag--accent">AI Design</span>
-        <span class="proj-tag">Interaction Design</span>
-        <span class="proj-tag">Mobile · iOS &amp; Android</span>
-        <span class="proj-tag">2024</span>
+        <span class="proj-tag">Previewers</span>
+        <span class="proj-tag">iOS &amp; Android</span>
+        <span class="proj-tag">2026</span>
       </div>
       <h1 class="proj-hero-title">AI Previewer in M365 Copilot</h1>
       <p class="proj-hero-sub">Designing the Dynamic Action Bar — a persistent, context-aware Copilot entry point inside Word, Excel, PowerPoint and Outlook previewers that lifted AI engagement from ~2% to ~15%.</p>
@@ -122,13 +82,6 @@
       </div>
     </div>
 
-    <div class="proj-img-box reveal">
-      <div class="proj-img-ph">
-        <div class="proj-img-ph-icon">⬚</div>
-        <span>Before state — old Copilot entry points — drop your image here</span>
-      </div>
-    </div>
-
     <div class="proj-section reveal">
       <span class="proj-section-label">The Goal</span>
       <h2>A single, consistent Copilot entry point — discoverable and context-aware.</h2>
@@ -141,10 +94,27 @@
       </ul>
     </div>
 
+    <p class="proj-img-caption reveal">Many surfaces. Zero consistency.</p>
     <div class="proj-img-box reveal">
-      <div class="proj-img-ph">
-        <div class="proj-img-ph-icon">⬚</div>
-        <span>Goal & vision — drop your image here</span>
+      <img src="Images/previewer-inconsistency.png" alt="Inconsistent file previewers across the app — light mode" class="proj-img theme-img-light" />
+      <img src="Images/previewer-inconsistency-dark.png" alt="Inconsistent file previewers across the app — dark mode" class="proj-img theme-img-dark" />
+    </div>
+
+    <div class="proj-section reveal">
+      <span class="proj-section-label">Content Types</span>
+      <h2>Two kinds of content. One consistent experience.</h2>
+      <p>Not all file types are created equal. DAB needed to work across two fundamentally different content models — each with its own user intent and interaction pattern.</p>
+      <div class="proj-content-types">
+        <div class="proj-content-type">
+          <h3>Established</h3>
+          <p>Files created outside of AI — documents, spreadsheets, presentations, PDFs. Users come to read, review, or edit. AI is a layer on top, not the origin.</p>
+          <p class="proj-content-type-eg">Word · Excel · PowerPoint · PDF</p>
+        </div>
+        <div class="proj-content-type">
+          <h3>Model-forward</h3>
+          <p>Content primarily generated and refined by AI — images, Pages, and emerging formats where AI is central to both creation and iteration.</p>
+          <p class="proj-content-type-eg">Images · Pages · AI-generated outputs</p>
+        </div>
       </div>
     </div>
 
@@ -155,10 +125,8 @@
     </div>
 
     <div class="proj-img-box reveal">
-      <div class="proj-img-ph">
-        <div class="proj-img-ph-icon">⬚</div>
-        <span>Key idea — DAB concept — drop your image here</span>
-      </div>
+      <img src="Images/dab-concept.png" alt="DAB — Dynamic Action Bar concept" class="proj-img theme-img-light" />
+      <img src="Images/dab-concept-dark.png" alt="DAB — Dynamic Action Bar concept — dark mode" class="proj-img theme-img-dark" />
     </div>
 
     <div class="proj-section reveal">
@@ -169,39 +137,37 @@
         <div class="proj-decision">
           <div class="proj-decision-num">01</div>
           <div>
-            <h3>Consistent placement builds muscle memory</h3>
-            <p>DAB stays in the same location across all previewers. Users always know where to find it — whether they're in Word, Excel, or PowerPoint. Predictability is a feature.</p>
+            <h3>Consistent placement</h3>
+            <p>DAB anchors to the same spot across every previewer. Predictability is a feature.</p>
           </div>
         </div>
         <div class="proj-decision">
           <div class="proj-decision-num">02</div>
           <div>
-            <h3>Dual states: Copilot vs App actions in one surface</h3>
-            <p>Copilot actions (Summarise, Ask, Draft, Explain) share space with app actions (Share, Edit, Open in app). A clear visual hierarchy prevents confusion — AI actions lead, app actions support.</p>
+            <h3>Dual action states</h3>
+            <p>Copilot and app actions share one surface — AI actions lead, native actions support.</p>
           </div>
         </div>
         <div class="proj-decision">
           <div class="proj-decision-num">03</div>
           <div>
-            <h3>Preview-safe interaction with half-sheet patterns</h3>
-            <p>Copilot responses surface in a half-sheet so users never lose document context. They can read, scroll, and act on AI output without leaving the preview experience.</p>
+            <h3>Context stays intact</h3>
+            <p>Copilot responses open in a half-sheet — users never lose sight of the document.</p>
           </div>
         </div>
         <div class="proj-decision">
           <div class="proj-decision-num">04</div>
           <div>
-            <h3>Mobile restraint — no heavy chrome, no mode switches</h3>
-            <p>Every decision was filtered through a mobile constraint lens. No complex mode-switching unless the user explicitly opts in. The DAB is persistent but unobtrusive.</p>
+            <h3>Designed for small screens</h3>
+            <p>No cluttered toolbars, no disruptive mode switches. DAB stays visible without getting in the way.</p>
           </div>
         </div>
       </div>
     </div>
 
     <div class="proj-img-box reveal">
-      <div class="proj-img-ph">
-        <div class="proj-img-ph-icon">⬚</div>
-        <span>DAB component design & specs — drop your image here</span>
-      </div>
+      <img src="Images/dab-model.png" alt="DAB component design & specs — light mode" class="proj-img theme-img-light" />
+      <img src="Images/dab-model-dark.png" alt="DAB component design & specs — dark mode" class="proj-img theme-img-dark" />
     </div>
 
     <div class="proj-section reveal">
@@ -216,18 +182,75 @@
       </ul>
     </div>
 
-    <div class="proj-img-box reveal">
-      <div class="proj-img-ph">
-        <div class="proj-img-ph-icon">⬚</div>
-        <span>DAB in Word, Excel & PowerPoint — drop your image here</span>
+    <div class="proj-slideshow-section reveal">
+      <div class="proj-slideshow-header">
+        <span class="proj-section-label">What I Designed</span>
+        <h2>DAB across content types</h2>
+      </div>
+      <div class="proj-slideshow" id="dabSlideshow">
+        <div class="proj-slideshow-track" id="dabTrack">
+          <div class="proj-slide">
+            <img src="Images/1-dab-Word.png" class="theme-img-light" alt="DAB in Word" />
+            <img src="Images/1-dab-Word-dark.png" class="theme-img-dark" alt="DAB in Word dark" />
+          </div>
+          <div class="proj-slide">
+            <img src="Images/2-dab-excel.png" class="theme-img-light" alt="DAB in Excel" />
+            <img src="Images/2-dab-excel-dark.png" class="theme-img-dark" alt="DAB in Excel dark" />
+          </div>
+          <div class="proj-slide">
+            <img src="Images/3-dab-ppt.png" class="theme-img-light" alt="DAB in PowerPoint" />
+            <img src="Images/3-dab-ppt-dark.png" class="theme-img-dark" alt="DAB in PowerPoint dark" />
+          </div>
+          <div class="proj-slide">
+            <img src="Images/4-dab-PDF.png" class="theme-img-light" alt="DAB in PDF" />
+            <img src="Images/4-dab-PDF-dark.png" class="theme-img-dark" alt="DAB in PDF dark" />
+          </div>
+          <div class="proj-slide">
+            <img src="Images/5-dab-voice.png" class="theme-img-light" alt="DAB in Voice" />
+            <img src="Images/5-dab-voice-dark.png" class="theme-img-dark" alt="DAB in Voice dark" />
+          </div>
+          <div class="proj-slide">
+            <img src="Images/6-dab-page.png" class="theme-img-light" alt="DAB in Pages" />
+            <img src="Images/6-dab-page-dark.png" class="theme-img-dark" alt="DAB in Pages dark" />
+          </div>
+          <div class="proj-slide">
+            <img src="Images/7-dab-image.png" class="theme-img-light" alt="DAB in Images" />
+            <img src="Images/7-dab-image-dark.png" class="theme-img-dark" alt="DAB in Images dark" />
+          </div>
+        </div>
+        <div class="proj-slideshow-fade-left"></div>
+        <div class="proj-slideshow-fade-right"></div>
+      </div>
+      <div class="proj-slideshow-controls">
+        <button class="proj-slideshow-arrow" id="dabPrev" aria-label="Previous">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="proj-slideshow-dots" id="dabDots">
+          <button class="proj-slideshow-dot active" data-index="0"></button>
+          <button class="proj-slideshow-dot" data-index="1"></button>
+          <button class="proj-slideshow-dot" data-index="2"></button>
+          <button class="proj-slideshow-dot" data-index="3"></button>
+          <button class="proj-slideshow-dot" data-index="4"></button>
+          <button class="proj-slideshow-dot" data-index="5"></button>
+          <button class="proj-slideshow-dot" data-index="6"></button>
+        </div>
+        <button class="proj-slideshow-arrow" id="dabNext" aria-label="Next">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </div>
     </div>
 
-    <div class="proj-img-box reveal">
-      <div class="proj-img-ph">
-        <div class="proj-img-ph-icon">⬚</div>
-        <span>Reusable DAB patterns in Outlook — drop your image here</span>
-      </div>
+    <div class="proj-section reveal">
+      <span class="proj-section-label">End to End</span>
+      <h2>DAB in previewer — end to end.</h2>
+      <p>From opening a file to acting on AI output — DAB stays present, useful, and out of the way.</p>
+    </div>
+
+    <div class="proj-video-wrap reveal">
+      <video class="proj-video" controls playsinline preload="metadata" muted>
+        <source src="Videos/DAB-video.mov" type="video/mp4" />
+        Your browser does not support inline video.
+      </video>
     </div>
 
     <div class="proj-section reveal">
@@ -241,10 +264,6 @@
         <div class="proj-impact-stat">
           <div class="proj-impact-num">~15%</div>
           <div class="proj-impact-label">Copilot engagement in WXP previewers after DAB adoption</div>
-        </div>
-        <div class="proj-impact-stat">
-          <div class="proj-impact-num">×N</div>
-          <div class="proj-impact-label">DAB scaled as a reusable AI-first pattern across M365 mobile</div>
         </div>
       </div>
       <p style="margin-top:28px;">The Dynamic Action Bar is now positioned as a scalable, AI-first interaction pattern across M365 mobile apps — the standard for how Copilot surfaces inside document-centric experiences.</p>
@@ -273,6 +292,70 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 20);
     }, { passive: true });
+
+    document.querySelectorAll('video.proj-video').forEach(video => {
+      video.addEventListener('ended', () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+  </script>
+
+  <script>
+    (function () {
+      const track = document.getElementById('dabTrack');
+      const dots = document.querySelectorAll('#dabDots .proj-slideshow-dot');
+      const slideshow = document.getElementById('dabSlideshow');
+      const prevBtn = document.getElementById('dabPrev');
+      const nextBtn = document.getElementById('dabNext');
+      const slides = track.querySelectorAll('.proj-slide');
+      const total = slides.length;
+      const GAP = 24;
+      let current = 0;
+      let slideWidth = 0;
+
+      function layout() {
+        const containerWidth = slideshow.offsetWidth;
+        slideWidth = Math.round(containerWidth * 0.72);
+        const sidePad = (containerWidth - slideWidth) / 2;
+
+        slides.forEach(s => {
+          s.style.width = slideWidth + 'px';
+        });
+
+        // Side padding lets first and last slides sit centered
+        track.style.paddingLeft  = sidePad + 'px';
+        track.style.paddingRight = sidePad + 'px';
+      }
+
+      function goTo(index) {
+        current = Math.max(0, Math.min(total - 1, index));
+        // Offset from the padded start — padding already handles centering
+        track.style.transform = `translateX(${-(current * (slideWidth + GAP))}px)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === total - 1;
+      }
+
+      dots.forEach(dot => dot.addEventListener('click', () => goTo(parseInt(dot.dataset.index))));
+      prevBtn.addEventListener('click', () => goTo(current - 1));
+      nextBtn.addEventListener('click', () => goTo(current + 1));
+
+      // Drag / swipe
+      let startX = 0, isDragging = false;
+      track.addEventListener('pointerdown', e => { startX = e.clientX; isDragging = true; track.setPointerCapture(e.pointerId); });
+      track.addEventListener('pointerup', e => {
+        if (!isDragging) return;
+        isDragging = false;
+        const diff = startX - e.clientX;
+        if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
+      });
+
+      window.addEventListener('resize', () => { layout(); goTo(current); }, { passive: true });
+
+      layout();
+      goTo(0);
+    })();
   </script>
 </body>
 </html>
