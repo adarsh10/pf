@@ -1365,7 +1365,18 @@ html[data-theme="light"] .about-role { color: #666; }
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
+}
+
+.contact-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  margin-bottom: 24px;
 }
 
 .contact .section-label { color: #6a6a6a; }
