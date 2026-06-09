@@ -3033,6 +3033,14 @@ html[data-theme="light"] .proj-slideshow-dot.active {
   margin-bottom: 20px;
 }
 
+.rc-source {
+  font-size: 11px;
+  color: var(--gray-400);
+  margin-top: -12px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
 .rc-legend { display: flex; gap: 20px; }
 
 .rc-leg {
