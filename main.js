@@ -102,6 +102,7 @@ const STORY_DATA = [
     desc: 'Built Microsoft 365 mobile\'s first ever design system from scratch — a shared vocabulary of components, tokens and patterns that became the foundation every team built on.',
     gradient: 'linear-gradient(160deg, #0a1a10 0%, #0f3020 55%, #081510 100%)',
     accent: '#4ade80',
+    img: 'Images/stories/s1.png',
   },
   {
     year: '2021', num: '02',
@@ -109,6 +110,7 @@ const STORY_DATA = [
     desc: 'Brought the unified Office app to iPad — adapting mobile-first flows for a larger canvas and unlocking a richer productivity experience for millions of tablet users worldwide.',
     gradient: 'linear-gradient(160deg, #0a1530 0%, #102040 55%, #080f20 100%)',
     accent: '#93c5fd',
+    img: 'Images/stories/s2.png',
   },
   {
     year: '2021', num: '03',
@@ -116,6 +118,7 @@ const STORY_DATA = [
     desc: 'Designed the QAB — a persistent, context-aware toolbar that surfaced the right Copilot actions at exactly the right moment, cutting friction across every M365 app.',
     gradient: 'linear-gradient(160deg, #1a0a08 0%, #3a1008 55%, #180808 100%)',
     accent: '#fb923c',
+    img: 'Images/stories/s3.png',
   },
   {
     year: '2022', num: '04',
@@ -123,6 +126,7 @@ const STORY_DATA = [
     desc: 'Introduced Lottie animations into M365 mobile — bringing life to loading states, onboarding flows and empty states without adding bloat or hurting performance.',
     gradient: 'linear-gradient(160deg, #0a1020 0%, #1a0a40 55%, #100820 100%)',
     accent: '#c084fc',
+    img: 'Images/stories/s4.png',
   },
   {
     year: '2023', num: '05',
@@ -130,6 +134,7 @@ const STORY_DATA = [
     desc: 'Redesigned the Home tab — the first screen millions see every day. Built a personalised, AI-aware surface that surfaced what mattered before users even thought to ask.',
     gradient: 'linear-gradient(160deg, #080f18 0%, #0f1a30 55%, #060c18 100%)',
     accent: '#38bdf8',
+    img: 'Images/stories/s5.png',
   },
   {
     year: '2022–24', num: '06',
@@ -137,6 +142,7 @@ const STORY_DATA = [
     desc: 'Designed through three major rebrands — Office to Microsoft 365 to Copilot. Each shift had to feel seamless to hundreds of millions of existing users while signalling something entirely new.',
     gradient: 'linear-gradient(160deg, #120820 0%, #280a48 55%, #100820 100%)',
     accent: '#e879f9',
+    img: 'Images/stories/s6.png',
   },
 ];
 
@@ -166,6 +172,7 @@ class StoryViewer {
 
     this.slideArea.innerHTML = this.data.map((s, i) =>
       `<div class="sv-slide${i === 0 ? ' is-active' : ''}" data-idx="${i}" style="background:${s.gradient}">
+        ${s.img ? `<img class="sv-slide-img" src="${s.img}" alt="" loading="lazy">` : ''}
         <div class="sv-slide-inner">
           <div class="sv-slide-num">
             <span class="sv-dot" style="background:${s.accent}"></span>

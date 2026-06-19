@@ -717,6 +717,18 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
   z-index: 1;
 }
 
+/* Story image — fills the frame, anchored to top, aspect ratio preserved */
+.sv-slide-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  z-index: 0;
+}
+
 /* Big ghost year in bg */
 .sv-bg-year {
   position: absolute;
@@ -734,14 +746,15 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
   line-height: 1;
 }
 
-/* Gradient overlay for text legibility */
+/* Gradient overlay behind the bottom title + description for legibility */
 .sv-slide::after {
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 70%;
-  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
+  height: 75%;
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.7) 30%, transparent 100%);
   pointer-events: none;
+  z-index: 1;
 }
 
 /* Slide content */
