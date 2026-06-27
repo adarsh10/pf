@@ -1474,10 +1474,10 @@ html[data-theme="light"] .about-role { color: #666; }
   letter-spacing: 0.01em;
   transition: color 0.2s ease;
 }
-.contact-detail:hover { color: #ec4899; text-decoration: underline; }
+.contact-detail:hover { color: #000000; text-decoration: underline; }
 .contact-detail-sep { color: #aaaaaa; font-weight: 400; }
 html[data-theme="light"] .contact-detail { color: #e8e6e1; }
-html[data-theme="light"] .contact-detail:hover { color: #f472b6; }
+html[data-theme="light"] .contact-detail:hover { color: #ffffff; }
 html[data-theme="light"] .contact-detail-sep { color: #666666; }
 
 /* =============================================
