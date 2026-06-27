@@ -561,29 +561,21 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
   border-radius: 20px;
   top: 50%; left: 50%;
 }
-.msft-sc--4 {
-  background: #1a1a1a;
-  transform: translate(-50%, -50%) rotate(-14deg) translateY(24px);
-  opacity: 0.35;
-}
 .msft-sc--3 {
-  background: #222222;
+  background: #262626;
   transform: translate(-50%, -50%) rotate(-7deg) translateY(12px);
-  opacity: 0.55;
 }
 .msft-sc--2 {
-  background: #2c2c2c;
+  background: #383838;
   transform: translate(-50%, -50%) rotate(4deg) translateY(4px);
-  opacity: 0.75;
 }
 .msft-sc--1 {
-  background: #333333;
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0) 58%),
+    #333333 url("Images/msft-tile-design-system.png") center / cover no-repeat;
   transform: translate(-50%, -50%) rotate(-2deg);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 20px 18px;
   box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  overflow: hidden;
 }
 .msft-sc-year {
   font-size: 10px;
