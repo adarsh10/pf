@@ -238,6 +238,13 @@ class StoryViewer {
 
   _bindEvents() {
     document.getElementById('openStories').addEventListener('click', () => this.open());
+    const altTrigger = document.getElementById('openStoriesText');
+    if (altTrigger) {
+      altTrigger.addEventListener('click', () => this.open());
+      altTrigger.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.open(); }
+      });
+    }
     document.getElementById('svClose').addEventListener('click',  () => this.close());
     document.getElementById('svNext').addEventListener('click',   (e) => { e.stopPropagation(); this.next(); });
     document.getElementById('svPrev').addEventListener('click',   (e) => { e.stopPropagation(); this.prev(); });

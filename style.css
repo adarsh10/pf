@@ -516,6 +516,19 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
   margin-bottom: 20px;
 }
 
+.msft-years-link {
+  color: var(--black);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: opacity 0.2s ease;
+}
+.msft-years-link:hover { opacity: 0.7; text-decoration-style: solid; }
+.msft-years-link:focus-visible { outline: 2px solid var(--black); outline-offset: 2px; border-radius: 2px; }
+
 .msft-banner-cta {
   display: inline-flex;
   align-items: center;
