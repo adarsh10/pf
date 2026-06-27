@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Adarsh Raj Shah — UX Designer CV</title>
+<style>
+  @page { size: A4; margin: 0; }
+
+  :root {
+    --ink: #1a1a1a;
+    --muted: #5c5c5c;
+    --faint: #8a8a8a;
+    --accent: #1a73e8;        /* Google blue */
+    --line: #e3e3e3;
+    --bg: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 11.4px;
+    line-height: 1.45;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 15mm 16mm 12mm;
+    margin: 0 auto;
+  }
+
+  /* ── Header ─────────────────────────────────────────── */
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 11px; margin-bottom: 14px; }
+  .name {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+    line-height: 1.05;
+  }
+  .role {
+    font-size: 12.8px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 3px;
+    letter-spacing: 0.2px;
+  }
+  .contact {
+    margin-top: 8px;
+    font-size: 10.7px;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+  .contact a { color: var(--muted); text-decoration: none; }
+  .contact span.sep { color: var(--line); }
+
+  /* ── Summary ────────────────────────────────────────── */
+  .summary {
+    font-size: 11.8px;
+    line-height: 1.55;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  .summary strong { color: var(--ink); font-weight: 600; }
+
+  /* ── Section ────────────────────────────────────────── */
+  section { margin-bottom: 15px; }
+  .sec-title {
+    font-size: 10.2px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 9px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* ── Experience (timeline) ──────────────────────────── */
+  .exp { position: relative; padding-left: 21px; }
+  .exp::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background-image: radial-gradient(circle, #c2c2c2 0.5px, transparent 0.6px);
+    background-size: 2px 7px;
+    background-position: top center;
+    background-repeat: repeat-y;
+  }
+  .job { position: relative; margin-bottom: 14px; }
+  .job:last-child { margin-bottom: 0; }
+  .job::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 1.5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #bdbdbd;
+    box-sizing: border-box;
+  }
+  .job-title { font-size: 12.8px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+  .job-where { font-size: 10.5px; color: var(--muted); margin: 2px 0 6px; font-weight: 500; }
+  .job-sub { font-size: 10.7px; color: var(--muted); margin-bottom: 0; }
+
+  .projects { margin: 9px 0 2px; }
+  .proj { margin-bottom: 10px; }
+  .proj:last-child { margin-bottom: 0; }
+  .proj-name { font-size: 11.6px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+  .proj-desc { font-size: 11px; color: #383838; line-height: 1.55; }
+  .proj-impact { font-size: 11px; color: #383838; line-height: 1.5; margin-top: 3px; }
+  .proj-impact b { font-weight: 700; color: var(--ink); }
+  .proj-desc b { font-weight: 600; color: var(--ink); }
+  ul { list-style: none; margin-top: 3px; }
+  li {
+    position: relative;
+    padding-left: 12px;
+    margin-bottom: 2.5px;
+    font-size: 9.9px;
+    color: #353535;
+    line-height: 1.46;
+  }
+  li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 6px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  li b { font-weight: 600; color: var(--ink); }
+
+  .earlier { font-size: 10.8px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  .earlier b { color: var(--ink); font-weight: 600; }
+
+  /* ── Two column lower ───────────────────────────────── */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 26px;
+    row-gap: 14px;
+    align-items: start;
+  }
+
+  .skill-group { margin-bottom: 7px; }
+  .skill-label { font-size: 10.2px; font-weight: 700; color: var(--ink); margin-bottom: 1px; }
+  .skill-list { font-size: 10.7px; color: var(--muted); }
+
+  .edu-item, .award-item { margin-bottom: 7px; }
+  .edu-deg, .award-name { font-size: 11.2px; font-weight: 600; }
+  .edu-school, .award-meta { font-size: 10.5px; color: var(--muted); }
+
+  .award-item { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+  .award-meta { white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="name">Adarsh Raj Shah</div>
+    <div class="role">Senior Product Designer · AI &amp; Mobile UX</div>
+    <div class="contact">
+      <span>Hyderabad, India</span><span class="sep">|</span>
+      <a href="mailto:adarshraj.shah@gmail.com" target="_blank" rel="noopener">adarshraj.shah@gmail.com</a><span class="sep">|</span>
+      <a href="http://adarssssh.in" target="_blank" rel="noopener">adarssssh.in</a><span class="sep">|</span>
+      <a href="https://www.linkedin.com/in/adarssssh/" target="_blank" rel="noopener">linkedin.com/in/adarssssh</a>
+    </div>
+  </header>
+
+  <p class="summary">
+    Product designer with <strong>7+ years</strong> shaping AI-first mobile experiences at Microsoft, serving
+    <strong>hundreds of millions</strong> of users across the Microsoft 365 Copilot mobile app. I take ambiguous, large-scale problems
+    from strategy to ship, grounding decisions in research and telemetry, and building reusable interaction
+    systems that measurably improve engagement, activation, and retention.
+  </p>
+
+  <section>
+    <div class="sec-title">Experience</div>
+
+    <div class="exp">
+
+      <div class="job">
+        <div class="job-title">Senior Product Designer, Microsoft</div>
+        <div class="job-where">Hyderabad, India · June 2019 — Present</div>
+        <div class="job-sub">Microsoft 365 Copilot mobile app: AI-native interfaces for iOS &amp; Android. End-to-end ownership across strategy, research, interaction, motion and ship.</div>
+
+        <div class="projects">
+          <div class="proj">
+            <div class="proj-name">Dynamic Action Button (DAB) in File Previewers</div>
+            <p class="proj-desc">Designed a persistent, context-aware Copilot entry point inside Word, Excel, PowerPoint &amp; PDF previewers — the most-visited surface in Microsoft 365 mobile. Scaled <b>one interaction pattern across every previewer</b>, setting the standard for how Copilot surfaces in document-centric experiences.</p>
+            <div class="proj-impact"><b>Impact:</b> ~2% → ~15% Copilot engagement</div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-name">New User Onboarding, Microsoft 365 Copilot mobile app</div>
+            <p class="proj-desc">Rebuilt the first-run experience around a single "first prompt succeeds" moment, lifting consumer Week-1 activation <b>1.6–1.8×</b> with <b>zero retention regressions</b> across iOS &amp; Android. Owned strategy, prompt design and end-to-end flows, reversing a declining first-time-prompting trend.</p>
+            <div class="proj-impact"><b>Impact:</b> ~40K net-new weekly users, no acquisition spend</div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-name">Proactive Assistance &amp; Daily Brief</div>
+            <p class="proj-desc">Created a scalable UX framework for proactive AI nudges inside the Microsoft 365 Copilot app — shifting the experience from reactive to ambient intelligence. One entry point surfaces the daily brief, meeting prep and catch-ups before users think to ask, with <b>~2:1 positive feedback</b> in early rollout.</p>
+            <div class="proj-impact"><b>Impact:</b> one framework powering 3+ proactive scenarios</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-title">Design Intern, Microsoft</div>
+        <div class="job-where">Hyderabad, India · May — July 2018</div>
+        <div class="job-sub">Designed a virality concept for user acquisition and repeat usage in the Microsoft Kaizala app.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="grid">
+    <section style="margin-bottom:0;">
+      <div class="sec-title">Skills</div>
+      <div class="skill-group">
+        <div class="skill-label">Design</div>
+        <div class="skill-list">AI / Human-centered design · Interaction &amp; systems design · Mobile (iOS &amp; Android) · Prototyping · Motion</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Tools</div>
+        <div class="skill-list">Figma · Lottie · Claude Code · AI prototyping</div>
+      </div>
+    </section>
+
+    <section style="margin-bottom:0;">
+      <div class="sec-title">Education</div>
+      <div class="edu-item">
+        <div class="edu-deg">Master of Design (M.Des)</div>
+        <div class="edu-school">Indian Institute of Technology (IIT), Guwahati · 2017–2019</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-deg">B.Tech, Computer Science &amp; Engineering</div>
+        <div class="edu-school">Christ University, Bengaluru · 2012–2016</div>
+      </div>
+    </section>
+
+    <section style="margin-bottom:0;">
+      <div class="sec-title">Hobbies</div>
+      <div class="skill-list">Photography · Videography · Cricket · Formula 1 · Art</div>
+    </section>
+
+    <section style="margin-bottom:0;">
+      <div class="sec-title">Awards</div>
+      <div class="award-item">
+        <span class="award-name">Microsoft E+D "Be a Leader" Award</span>
+        <span class="award-meta">2021</span>
+      </div>
+      <div class="award-item">
+        <span class="award-name">Microsoft Global Hackathon — Runner Up</span>
+        <span class="award-meta">2019</span>
+      </div>
+      <div class="award-item">
+        <span class="award-name">Leader of Excellence, Christ University</span>
+        <span class="award-meta">2017</span>
+      </div>
+    </section>
+  </div>
+
+</div>
+</body>
+</html>

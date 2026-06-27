@@ -1643,6 +1643,85 @@ html[data-theme="light"] .about-role { color: #666; }
   color: var(--black);
 }
 
+/* Hero outcome stats — recruiter-first impact */
+.proj-hero-stats {
+  display: flex;
+  gap: clamp(28px, 5vw, 72px);
+  flex-wrap: wrap;
+  margin-top: clamp(36px, 5vw, 56px);
+}
+.proj-hero-stat {
+  position: relative;
+  padding-left: 18px;
+}
+.proj-hero-stat::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--gray-200);
+}
+.proj-hero-stat-num {
+  font-family: var(--font-sans);
+  font-size: clamp(32px, 3.6vw, 52px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+.proj-hero-stat-label {
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 1.45;
+  max-width: 20ch;
+}
+
+/* One-line takeaway under a visual */
+.proj-takeaway {
+  font-size: 15px;
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin-top: 20px;
+  padding-left: 16px;
+  border-left: 2px solid var(--gray-200);
+}
+.proj-takeaway strong { color: var(--black); font-weight: 600; }
+
+/* Condensed role strip */
+.proj-rolestrip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--gray-200);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: 8px;
+}
+.proj-role-item {
+  background: var(--gray-100);
+  padding: 22px 24px;
+}
+.proj-role-item h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0 0 6px;
+}
+.proj-role-item p {
+  font-size: 13px !important;
+  color: var(--gray-600) !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+@media (max-width: 720px) {
+  .proj-rolestrip { grid-template-columns: 1fr; }
+}
+
 /* Project visual banner */
 .proj-banner {
   width: 100%;

@@ -42,13 +42,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .ab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .ab-item { margin: 0; }
+    .ab-ph {
+      aspect-ratio: 4 / 3;
+      display: flex; align-items: center; justify-content: center;
+      border: 1.5px dashed rgba(140,140,140,0.45);
+      border-radius: 14px;
+      background: rgba(140,140,140,0.06);
+      color: rgba(140,140,140,0.9);
+      font-size: 14px; font-weight: 500; letter-spacing: 0.3px;
+    }
+    .ab-cap { margin-top: 12px; font-weight: 600; font-size: 15px; }
+    @media (max-width: 640px) { .ab-grid { grid-template-columns: 1fr; } }
+  </style>
   <script>
     (function() {
       var t = localStorage.getItem('theme');
       if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
     })();
   </script>
-  <script src="project-auth.js"></script>
 </head>
 <body class="project-page">
   <div id="page-loader"><div class="loader-dot"></div></div>
@@ -81,7 +95,23 @@
         <span class="proj-tag">2025–26</span>
       </div>
       <h1 class="proj-hero-title">New User Onboarding for M365 Copilot Mobile</h1>
-      <p class="proj-hero-sub">Reframing the first-run experience from a feature tour into a guided first success — so every new user, from a student to a seasoned professional, feels Copilot's value before they're asked to trust it.</p>
+      <p class="proj-hero-sub">Turning a confusing first run into a guided first success — so new users feel Copilot's value before they're asked to trust it.</p>
+
+      <div class="proj-hero-stats">
+        <div class="proj-hero-stat">
+          <div class="proj-hero-stat-num">~40K</div>
+          <div class="proj-hero-stat-label">Net-new weekly prompting users — no acquisition spend</div>
+        </div>
+        <div class="proj-hero-stat">
+          <div class="proj-hero-stat-num">1.6–1.8×</div>
+          <div class="proj-hero-stat-label">Lift in consumer Week-1 activation</div>
+        </div>
+        <div class="proj-hero-stat">
+          <div class="proj-hero-stat-num">0</div>
+          <div class="proj-hero-stat-label">Retention regressions across iOS &amp; Android</div>
+        </div>
+      </div>
+
       <div class="proj-hero-meta">
         <div class="proj-meta-item">
           <div class="proj-meta-label">Role</div>
@@ -107,54 +137,9 @@
   <div class="proj-body">
 
     <div class="proj-section reveal">
-      <span class="proj-section-label">My Role</span>
-      <h2>Sole designer. End to end.</h2>
-      <div class="proj-decisions">
-        <div class="proj-decision">
-          <div class="proj-decision-num">01</div>
-          <div>
-            <h3>End-to-end design ownership</h3>
-            <p>The only designer on the project — responsible for every decision, from first sketch to shipped product. No design support, no handoffs to another designer.</p>
-          </div>
-        </div>
-        <div class="proj-decision">
-          <div class="proj-decision-num">02</div>
-          <div>
-            <h3>Scope definition with PM</h3>
-            <p>Brainstormed on project scope with the PM early, questioning assumptions in the initial spec document to create clarity before any design work began.</p>
-          </div>
-        </div>
-        <div class="proj-decision">
-          <div class="proj-decision-num">03</div>
-          <div>
-            <h3>Research &amp; data</h3>
-            <p>Pulled quantitative data and research insights from the PM team and existing studies, grounding every design decision in real user behaviour — not assumptions.</p>
-          </div>
-        </div>
-        <div class="proj-decision">
-          <div class="proj-decision-num">04</div>
-          <div>
-            <h3>Leadership reviews</h3>
-            <p>Presented designs at key milestones to senior leadership — gathering feedback, defending rationale, and aligning design with broader product strategy.</p>
-          </div>
-        </div>
-        <div class="proj-decision">
-          <div class="proj-decision-num">05</div>
-          <div>
-            <h3>Impact tracking</h3>
-            <p>Tracked early rollout metrics weekly alongside the PM — using live numbers to validate decisions, surface friction, and inform next iterations.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj-section reveal">
-      <span class="proj-section-label">The Problem</span>
-      <h2>First impressions were breaking confidence, not building it.</h2>
-      <p>New users landed in Copilot without understanding what it could do for them. Generic prompts were ignored, failed interactions killed trust fast, and people rarely returned — especially everyday paid users who didn't have a corporate context to lean on when the AI fell short.</p>
-      <div class="proj-callout">
-        <p>"If the first interaction feels useful, users will come back. If it doesn't, they probably won't."</p>
-      </div>
+      <span class="proj-section-label">01 / The Problem</span>
+      <h2>New users left before Copilot ever proved its worth.</h2>
+      <p>The first run leaned on generic prompts and silent failures. Most new users never sent a meaningful prompt — and most never came back.</p>
     </div>
 
     <div class="proj-img-box reveal">
@@ -255,91 +240,40 @@
       </div>
     </div>
 
-    <div class="proj-section reveal">
-      <span class="proj-section-label">The Goal</span>
-      <h2>Design a first-run experience built around a guided first success.</h2>
-      <ul class="proj-list">
-        <li>Copilot's value shown through real, relatable work contexts</li>
-        <li>Users succeeding with their very first prompt</li>
-        <li>A consistent experience across subscription types — from consumer to premium</li>
-        <li>Measurable lift in Week-1 engagement and prompt submission</li>
-      </ul>
-    </div>
-
-    <div class="proj-img-box reveal">
-      <div class="gc-wrap">
-
-        <div class="gc-head">
-          <span class="gc-eyebrow">Goals &amp; Success Metrics</span>
-          <h3 class="gc-title">Week-1 Prompt Submission Rate</h3>
-          <p class="gc-subtitle">Every new user must experience a successful Copilot interaction within their first 7 days</p>
-        </div>
-
-        <!-- Current vs Target -->
-        <div class="gc-compare">
-          <div class="gc-compare-item gc-compare-item--now">
-            <span class="gc-badge">Baseline</span>
-            <div class="gc-compare-val">25%</div>
-            <div class="gc-compare-desc">of new users submit a prompt in Week 1 today</div>
-          </div>
-          <div class="gc-compare-arrow">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M5 14h18M17 8l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="gc-compare-item gc-compare-item--goal">
-            <span class="gc-badge">Target</span>
-            <div class="gc-compare-val">100%</div>
-            <div class="gc-compare-desc">of new users submit a prompt in Week 1</div>
-          </div>
-        </div>
-
-        <!-- Expected impact -->
-        <div class="gc-impact">
-          <div class="gc-impact-eyebrow">Expected Impact</div>
-          <div class="gc-impact-content">
-            <div class="gc-impact-val">~150K</div>
-            <div class="gc-impact-meta">
-              <div class="gc-impact-unit">WoW WAU</div>
-              <div class="gc-impact-desc">Weekly active users unlocked based on current top-of-funnel numbers — scales further with additional funnel investment</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
+    <p class="proj-takeaway reveal" style="margin-bottom:64px;">Only <strong>~26%</strong> of new iOS users — and <strong>19.5%</strong> on Android — ever became chat-active. The funnel was leaking at the very first step.</p>
 
     <div class="proj-section reveal">
-      <span class="proj-section-label">My Approach</span>
-      <h2>Reframing onboarding as a guided first success.</h2>
+      <span class="proj-section-label">02 / The Insight</span>
+      <h2>Stop touring features. Engineer a first success.</h2>
       <div class="proj-callout">
-        <p>"If the first interaction feels useful, users will come back."</p>
+        <p>"If the first interaction feels useful, users come back. If it doesn't, they won't."</p>
       </div>
-      <p>Three key design moves: personalized first prompts, silent progressive setup, and clear exits that respect user control at every step.</p>
+      <p>So the whole first run was rebuilt around a single moment: the user's <em>first prompt succeeding</em> — and a Week-1 target of every new user submitting one.</p>
     </div>
 
-
     <div class="proj-section reveal">
-      <span class="proj-section-label">Key Design Decisions</span>
-      <h2>Three moves that changed the onboarding equation.</h2>
+      <span class="proj-section-label">03 / The Design</span>
+      <h2>Three moves that changed the equation.</h2>
       <div class="proj-decisions">
         <div class="proj-decision">
           <div class="proj-decision-num">01</div>
           <div>
-            <h3>Personalized first prompts, not generic suggestions</h3>
-            <p>Microsoft 365 subscribers got graph-based prompts tied to their actual work — emails, meetings, documents already in their world. Consumer paid users got lightweight, immediately relatable prompts focused on quick wins, not feature showcasing.</p>
+            <h3>Personalized first prompts</h3>
+            <p>Work-graph prompts for M365 subscribers; quick-win prompts for consumers. Never generic suggestions.</p>
           </div>
         </div>
         <div class="proj-decision">
           <div class="proj-decision-num">02</div>
           <div>
-            <h3>Progressive setup — no wall of steps</h3>
-            <p>Eligibility checks and setup ran silently in the background. Users only entered the chat when Copilot was ready — eliminating confusion during early app moments.</p>
+            <h3>Silent progressive setup</h3>
+            <p>Eligibility and setup run in the background. Users reach chat only when Copilot is ready.</p>
           </div>
         </div>
         <div class="proj-decision">
           <div class="proj-decision-num">03</div>
           <div>
-            <h3>Clear exits and user control as a design constraint</h3>
-            <p>Dismissable at any time, no dead-end flows. Trust earned through design quality — not forced engagement.</p>
+            <h3>Control as a constraint</h3>
+            <p>Dismissable at every step. Trust earned through quality, never forced engagement.</p>
           </div>
         </div>
       </div>
@@ -384,19 +318,14 @@
       </div>
     </div><!-- /.explore-bleed -->
 
-    <div class="proj-section reveal">
-      <span class="proj-section-label">What I Designed</span>
-      <h2>End-to-end flows, not just screens.</h2>
-      <ul class="proj-list">
-        <li>Complete first-run experience flows for new users across iOS and Android</li>
-        <li>Prompt templates engineered for first-time success — contextual, specific, achievable</li>
-        <li>Subscription-aware onboarding logic differentiating consumer and premium experiences — each designed for a distinct mental model</li>
-        <li>A repeatable onboarding system that other teams could plug into, not a one-off screen set</li>
-      </ul>
+    <div class="proj-subsection-label reveal">The first-run flow</div>
+    <p class="proj-subsection-desc reveal">Perceived latency turns a technical wait into a moment of personalization. The hero prompt arrives pre-filled and contextual — built to succeed. The response confirms Copilot understands the user's world.</p>
+    <div class="proj-img-box reveal">
+      <img src="Images/user-onboarding/key-screens-light.png" alt="First-run flow — perceived latency, hero prompt, response" class="proj-full-img theme-img-light" />
+      <img src="Images/user-onboarding/key-screens-dark.png" alt="First-run flow — perceived latency, hero prompt, response" class="proj-full-img theme-img-dark" />
     </div>
 
-
-    <div class="proj-subsection-label reveal">End-to-End Experience</div>
+    <div class="proj-subsection-label reveal">End to end</div>
     <div class="proj-video-wrap reveal">
       <video class="proj-video" controls playsinline preload="metadata" muted>
         <source src="Videos/onboarding-end-to-end.mov" type="video/mp4" />
@@ -404,15 +333,27 @@
       </video>
     </div>
 
-    <div class="proj-subsection-label reveal">Key Interventions</div>
-    <p class="proj-subsection-desc reveal">The experience was engineered around three key moments that make the difference between a user who activates and one who drops off. Perceived latency turns a technical wait into a sense of personalisation. The hero prompt is the first real test — pre-filled, contextual, and designed to succeed. The response confirms Copilot understands the user's world, creating immediate confidence.</p>
+    <div class="proj-section reveal">
+      <span class="proj-section-label">04 / Experimentation</span>
+      <h2>Two patterns. One quick test.</h2>
+      <p>Two design patterns were on the table — Treatment A and Treatment B. To find out what actually worked before committing, we shipped both into a small A/B test with 5% of users, then finalized the pattern based on what moved the metric.</p>
+    </div>
+
     <div class="proj-img-box reveal">
-      <img src="Images/user-onboarding/key-screens-light.png" alt="Key interventions — perceived latency, hero prompt, response" class="proj-full-img theme-img-light" />
-      <img src="Images/user-onboarding/key-screens-dark.png" alt="Key interventions — perceived latency, hero prompt, response" class="proj-full-img theme-img-dark" />
+      <div class="ab-grid">
+        <figure class="ab-item">
+          <div class="ab-ph">Treatment A — design</div>
+          <figcaption class="ab-cap">Treatment A</figcaption>
+        </figure>
+        <figure class="ab-item">
+          <div class="ab-ph">Treatment B — design</div>
+          <figcaption class="ab-cap">Treatment B</figcaption>
+        </figure>
+      </div>
     </div>
 
     <div class="proj-section reveal">
-      <span class="proj-section-label">Impact</span>
+      <span class="proj-section-label">05 / Impact</span>
       <h2>Onboarding became a measurable growth lever.</h2>
 
       <div class="im-bento">
@@ -456,17 +397,48 @@
 
     </div>
 
+    <div class="proj-section reveal">
+      <span class="proj-section-label">06 / My Role</span>
+      <h2>Sole designer, end to end.</h2>
+      <div class="proj-rolestrip">
+        <div class="proj-role-item">
+          <h4>Strategy &amp; scope</h4>
+          <p>Set direction and pressure-tested the spec with the PM.</p>
+        </div>
+        <div class="proj-role-item">
+          <h4>Research &amp; data</h4>
+          <p>Grounded every decision in telemetry and prior studies.</p>
+        </div>
+        <div class="proj-role-item">
+          <h4>End-to-end UX</h4>
+          <p>Concept to ship — flows, prompt design, iOS &amp; Android.</p>
+        </div>
+        <div class="proj-role-item">
+          <h4>Prompt design</h4>
+          <p>Engineered first prompts for first-time success.</p>
+        </div>
+        <div class="proj-role-item">
+          <h4>Leadership reviews</h4>
+          <p>Presented at milestones; defended rationale to senior leaders.</p>
+        </div>
+        <div class="proj-role-item">
+          <h4>Impact tracking</h4>
+          <p>Read live metrics weekly to validate and iterate.</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- PROJECT NAV -->
   <div class="proj-nav">
-    <a href="proactive-assistance.html" class="proj-nav-link">
+    <a href="ai-browser.html" class="proj-nav-link">
       <span class="proj-nav-dir">← Previous</span>
-      <span class="proj-nav-title">Proactive Assistance: Daily Brief and More</span>
+      <span class="proj-nav-title">Dynamic Action Button (DAB) in File Previewers</span>
     </a>
-    <a href="ai-browser.html" class="proj-nav-link proj-nav-link--next">
+    <a href="proactive-assistance.html" class="proj-nav-link proj-nav-link--next">
       <span class="proj-nav-dir">Next Project →</span>
-      <span class="proj-nav-title">AI Previewer in M365 Copilot</span>
+      <span class="proj-nav-title">Proactive Assistance: Daily Brief and More</span>
     </a>
   </div>
 
