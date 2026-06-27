@@ -1459,25 +1459,25 @@ html[data-theme="light"] .about-role { color: #666; }
 }
 
 .contact-details {
-  margin-top: 24px;
+  margin: 0 0 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
-  font-size: 15px;
+  font-size: 17px;
+  font-weight: 600;
 }
 .contact-detail {
-  color: #333333;
+  color: #2a2a2a;
   text-decoration: none;
-  font-weight: 500;
   letter-spacing: 0.01em;
   transition: color 0.2s ease;
 }
-.contact-detail:hover { color: #0e0e0e; text-decoration: underline; }
-.contact-detail-sep { color: #aaaaaa; }
-html[data-theme="light"] .contact-detail { color: #d8d6d1; }
-html[data-theme="light"] .contact-detail:hover { color: #ffffff; }
+.contact-detail:hover { color: #ec4899; text-decoration: underline; }
+.contact-detail-sep { color: #aaaaaa; font-weight: 400; }
+html[data-theme="light"] .contact-detail { color: #e8e6e1; }
+html[data-theme="light"] .contact-detail:hover { color: #f472b6; }
 html[data-theme="light"] .contact-detail-sep { color: #666666; }
 
 /* =============================================
