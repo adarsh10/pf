@@ -42,21 +42,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .ab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .ab-item { margin: 0; }
-    .ab-ph {
-      aspect-ratio: 4 / 3;
-      display: flex; align-items: center; justify-content: center;
-      border: 1.5px dashed rgba(140,140,140,0.45);
-      border-radius: 14px;
-      background: rgba(140,140,140,0.06);
-      color: rgba(140,140,140,0.9);
-      font-size: 14px; font-weight: 500; letter-spacing: 0.3px;
-    }
-    .ab-cap { margin-top: 12px; font-weight: 600; font-size: 15px; }
-    @media (max-width: 640px) { .ab-grid { grid-template-columns: 1fr; } }
-  </style>
   <script>
     (function() {
       var t = localStorage.getItem('theme');
@@ -340,16 +325,8 @@
     </div>
 
     <div class="proj-img-box reveal">
-      <div class="ab-grid">
-        <figure class="ab-item">
-          <div class="ab-ph">Treatment A — design</div>
-          <figcaption class="ab-cap">Treatment A</figcaption>
-        </figure>
-        <figure class="ab-item">
-          <div class="ab-ph">Treatment B — design</div>
-          <figcaption class="ab-cap">Treatment B</figcaption>
-        </figure>
-      </div>
+      <img src="Images/user-onboarding/treatment-ab.png" alt="Treatment A and Treatment B onboarding designs — light mode" class="proj-full-img theme-img-light" />
+      <img src="Images/user-onboarding/treatment-ab-dark.png" alt="Treatment A and Treatment B onboarding designs — dark mode" class="proj-full-img theme-img-dark" />
     </div>
 
     <div class="proj-section reveal">
@@ -432,7 +409,7 @@
 
   <!-- PROJECT NAV -->
   <div class="proj-nav">
-    <a href="ai-browser.html" class="proj-nav-link">
+    <a href="dynamic-action-button.html" class="proj-nav-link">
       <span class="proj-nav-dir">← Previous</span>
       <span class="proj-nav-title">Dynamic Action Button (DAB) in File Previewers</span>
     </a>
