@@ -1468,17 +1468,17 @@ html[data-theme="light"] .about-role { color: #666; }
   font-size: 15px;
 }
 .contact-detail {
-  color: rgba(255,255,255,0.82);
+  color: #333333;
   text-decoration: none;
   font-weight: 500;
   letter-spacing: 0.01em;
   transition: color 0.2s ease;
 }
-.contact-detail:hover { color: #fff; text-decoration: underline; }
-.contact-detail-sep { color: var(--gray-500); }
-html[data-theme="light"] .contact-detail { color: #555; }
-html[data-theme="light"] .contact-detail:hover { color: #111; }
-html[data-theme="light"] .contact-detail-sep { color: #bbb; }
+.contact-detail:hover { color: #0e0e0e; text-decoration: underline; }
+.contact-detail-sep { color: #aaaaaa; }
+html[data-theme="light"] .contact-detail { color: #d8d6d1; }
+html[data-theme="light"] .contact-detail:hover { color: #ffffff; }
+html[data-theme="light"] .contact-detail-sep { color: #666666; }
 
 /* =============================================
    FOOTER
