@@ -238,7 +238,7 @@ class StoryViewer {
 
   _bindEvents() {
     document.getElementById('openStories').addEventListener('click', () => this.open());
-    const altTrigger = document.getElementById('openStoriesText');
+    const altTrigger = document.getElementById('openStoriesThumb');
     if (altTrigger) {
       altTrigger.addEventListener('click', () => this.open());
       altTrigger.addEventListener('keydown', e => {
