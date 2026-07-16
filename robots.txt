@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://adarsh10.github.io/pf/sitemap.xml
+Sitemap: https://www.adarssssh.in/sitemap.xml
