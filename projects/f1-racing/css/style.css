@@ -1,0 +1,402 @@
+:root {
+  --bg: #05070d;
+  --panel: rgba(9, 12, 20, 0.72);
+  --edge: rgba(140, 165, 200, 0.18);
+  --text: #e8eefc;
+  --dim: #7d8ba3;
+  --accent: #00e5ff;
+  --gold: #ffe066;
+  --red: #ff2b3d;
+  --green: #33ff88;
+  --purple: #b98bff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#scene { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+
+.mono { font-family: 'SF Mono', 'Consolas', 'Courier New', monospace; font-variant-numeric: tabular-nums; }
+.hidden { display: none !important; }
+
+/* ============================ HUD ============================ */
+
+#hud { position: fixed; inset: 0; pointer-events: none; }
+#hud.hidden { opacity: 0; }
+
+.panel {
+  position: absolute;
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  border-radius: 12px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.55);
+}
+
+/* --- timing tower --- */
+.timing {
+  top: 16px; left: 50%; transform: translateX(-50%);
+  padding: 10px 16px 8px;
+  min-width: 620px;
+}
+.timing .head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 1px solid var(--edge); padding-bottom: 6px; margin-bottom: 8px;
+}
+.timing .circuit { font-size: 12px; letter-spacing: 2.4px; font-weight: 700; color: var(--text); }
+.timing .meta { font-size: 10.5px; letter-spacing: 1.2px; color: var(--dim); }
+.timing .main { display: flex; gap: 18px; align-items: flex-end; justify-content: center; }
+.cell { display: flex; flex-direction: column; align-items: center; min-width: 54px; }
+.cell.wide { min-width: 112px; }
+.cell label { font-size: 9px; letter-spacing: 1.8px; color: var(--dim); margin-bottom: 2px; }
+.cell b { font-size: 21px; font-weight: 700; letter-spacing: 0.5px; }
+.cell b.dim { color: var(--dim); }
+.cell b.best { color: var(--purple); }
+.delta.good { color: var(--green); }
+.delta.bad { color: #ff6b6b; }
+.timing .sectors { display: flex; gap: 6px; justify-content: center; margin-top: 8px; }
+
+/* Gaps to the cars immediately ahead of and behind the player */
+.timing .battle {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 14px; margin-top: 7px;
+  padding-top: 6px; border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.battle .gap { display: flex; align-items: baseline; gap: 6px; font-size: 12px; }
+.battle .gap i {
+  font-style: normal; font-weight: 700; letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.55);
+}
+.battle .gap b { font-size: 13px; color: #e8edf6; }
+.battle .ahead b { color: #ff8c6b; }
+.battle .behind b { color: #6bd9ff; }
+
+.sec {
+  flex: 1; text-align: center; font-size: 11px; padding: 3px 0; border-radius: 5px;
+  background: rgba(255, 255, 255, 0.05); color: var(--dim);
+  font-family: 'SF Mono', Consolas, monospace;
+}
+.sec.purple { background: rgba(185, 139, 255, 0.22); color: var(--purple); }
+.sec.green  { background: rgba(51, 255, 136, 0.16); color: var(--green); }
+.sec.yellow { background: rgba(255, 224, 102, 0.16); color: var(--gold); }
+
+/* --- rev light bar --- */
+.revlights {
+  position: absolute; top: 128px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 4px; padding: 6px 10px;
+  background: rgba(5, 7, 13, 0.6); border-radius: 8px; border: 1px solid var(--edge);
+}
+.rl {
+  width: 15px; height: 8px; border-radius: 2px;
+  background: #161b24; transition: background 40ms linear, box-shadow 40ms linear;
+}
+.rl.green.on { background: #29ff7a; box-shadow: 0 0 10px #29ff7a; }
+.rl.red.on   { background: #ff2b2b; box-shadow: 0 0 10px #ff2b2b; }
+.rl.blue.on  { background: #4f7bff; box-shadow: 0 0 12px #7f9bff; }
+
+/* --- tacho + speedo dials --- */
+.gauges { left: 18px; top: 16px; padding: 8px 10px 6px; }
+#gaugeCanvas { display: block; width: 220px; height: 118px; }
+
+/* --- pedals / steering --- */
+.pedals {
+  left: 18px; bottom: 18px; padding: 12px;
+  display: flex; gap: 12px; align-items: flex-end;
+}
+.bar {
+  position: relative; width: 22px; height: 96px; border-radius: 5px;
+  background: rgba(255, 255, 255, 0.06); overflow: hidden;
+}
+.bar .fill { position: absolute; bottom: 0; left: 0; width: 100%; height: 0%; }
+.fill.thr { background: linear-gradient(0deg, #12b76a, #3dff9e); }
+.fill.brk { background: linear-gradient(0deg, #b3261e, #ff5f52); }
+.bar label {
+  position: absolute; bottom: 3px; width: 100%; text-align: center;
+  font-size: 9px; color: #fff; opacity: 0.75;
+}
+.steerbox { position: relative; width: 96px; height: 96px; }
+.steerarc {
+  position: absolute; inset: 8px; border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.16);
+  border-bottom-color: transparent;
+}
+.needle {
+  position: absolute; left: 50%; top: 16px; width: 2px; height: 34px;
+  background: var(--accent); transform-origin: 50% 100%;
+  box-shadow: 0 0 8px var(--accent);
+}
+.steerbox label {
+  position: absolute; bottom: 4px; width: 100%; text-align: center;
+  font-size: 9px; letter-spacing: 1.4px; color: var(--dim);
+}
+.gbox { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.gcircle {
+  position: relative; width: 62px; height: 62px; border-radius: 50%;
+  border: 1px solid var(--edge);
+  background:
+    linear-gradient(90deg, transparent 49%, rgba(255,255,255,0.12) 50%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, rgba(255,255,255,0.12) 50%, transparent 51%);
+  display: flex; align-items: center; justify-content: center;
+}
+#gdot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold); box-shadow: 0 0 10px var(--gold);
+}
+#gforce { font-size: 11px; color: var(--dim); }
+
+/* --- main dash --- */
+.dash { left: 50%; bottom: 18px; transform: translateX(-50%); padding: 10px 18px 12px; min-width: 460px; }
+.rpmtrack {
+  height: 5px; border-radius: 3px; background: rgba(255, 255, 255, 0.08);
+  overflow: hidden; margin-bottom: 10px;
+}
+#rpmFill {
+  display: block; height: 100%; width: 0%;
+  background: linear-gradient(90deg, #29ff7a 0%, #ffe066 55%, #ff2b2b 82%, #b98bff 100%);
+}
+.readout { display: flex; align-items: center; gap: 22px; }
+.speedbox { display: flex; flex-direction: column; align-items: flex-end; min-width: 118px; }
+.speedbox b { font-size: 52px; line-height: 0.92; font-weight: 800; letter-spacing: -2px; }
+.speedbox small { font-size: 10px; letter-spacing: 3px; color: var(--dim); }
+.gear {
+  font-size: 62px; font-weight: 900; line-height: 1; min-width: 62px; text-align: center;
+  color: #fff; text-shadow: 0 0 22px rgba(0, 229, 255, 0.45);
+}
+.side { display: flex; flex-direction: column; gap: 6px; min-width: 190px; }
+.drs {
+  font-size: 11px; font-weight: 800; letter-spacing: 2.4px; text-align: center;
+  padding: 4px 0; border-radius: 5px;
+  background: rgba(255, 255, 255, 0.06); color: var(--dim);
+  border: 1px solid transparent;
+}
+.drs.ready { color: #8dffc0; border-color: rgba(51, 255, 136, 0.4); }
+.drs.active { background: var(--green); color: #04140b; box-shadow: 0 0 18px rgba(51,255,136,0.55); }
+.ersrow { display: flex; align-items: center; gap: 8px; }
+.ersbar { flex: 1; height: 9px; border-radius: 4px; background: rgba(255,255,255,0.08); overflow: hidden; }
+#ersFill { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, #0a9d6a, #00ffa0); }
+#ersFill.deploy { background: linear-gradient(90deg, #00ffa0, #b3ffdd); box-shadow: 0 0 12px #00ffa0; }
+#ersPct { font-size: 10px; color: var(--dim); min-width: 30px; }
+.statrow { display: flex; justify-content: space-between; font-size: 10px; color: var(--dim); letter-spacing: 1px; }
+.statrow b { color: var(--text); font-weight: 600; }
+
+/* --- minimap --- */
+.mapbox { right: 18px; bottom: 18px; padding: 8px; }
+#minimap { display: block; width: 200px; height: 200px; }
+.camlabel {
+  display: block; text-align: center; font-size: 10px;
+  letter-spacing: 1.6px; color: var(--dim); margin-top: 2px;
+}
+
+/* --- corner name + flash --- */
+.corner {
+  position: absolute; right: 18px; top: 18px;
+  font-size: 13px; letter-spacing: 3px; color: var(--gold);
+  text-shadow: 0 0 14px rgba(255, 224, 102, 0.4);
+}
+.flash {
+  position: absolute; top: 42%; left: 50%; transform: translate(-50%, -50%) scale(0.94);
+  font-size: 30px; font-weight: 800; letter-spacing: 3px;
+  opacity: 0; transition: opacity 200ms ease, transform 200ms ease;
+  text-shadow: 0 4px 26px rgba(0, 0, 0, 0.9);
+}
+.flash.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+/* ======================= start lights ======================= */
+.startlights {
+  position: fixed; top: 14%; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 18px; padding: 16px 22px;
+  background: rgba(6, 8, 14, 0.82); border-radius: 14px;
+  border: 1px solid var(--edge); z-index: 20;
+}
+.lcol { display: flex; flex-direction: column; gap: 8px; }
+.lcol span {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: #17191f; border: 2px solid #2a2f3a;
+}
+.lcol span.on { background: #ff1f2e; border-color: #ff6b6b; box-shadow: 0 0 26px #ff1f2e; }
+
+/* ====================== pre-race B-roll ===================== */
+.broll {
+  position: fixed; inset: 0; z-index: 25; pointer-events: none;
+}
+/* Letterbox bars, to sell the cut away from the cockpit. */
+.broll .bbars i {
+  position: absolute; left: 0; right: 0; height: 8.5vh;
+  background: #000; display: block;
+}
+.broll .bbars i:first-child { top: 0; }
+.broll .bbars i:last-child { bottom: 0; }
+
+.broll .blower {
+  position: absolute; left: 5vw; bottom: 15vh;
+  padding: 12px 0 12px 18px;
+  border-left: 4px solid var(--accent);
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.95);
+}
+.broll .btitle {
+  font-size: clamp(24px, 4.2vw, 58px); font-weight: 800;
+  letter-spacing: 2px; line-height: 1.02; color: #fff;
+}
+.broll .bsub {
+  margin-top: 8px; font-size: clamp(11px, 1.15vw, 15px);
+  letter-spacing: 4px; color: rgba(255, 255, 255, 0.72);
+}
+/* Retriggered per shot by toggling `.in`, so each caption slides in fresh. */
+.broll.in .blower { animation: bslide 620ms cubic-bezier(0.16, 0.9, 0.3, 1) both; }
+@keyframes bslide {
+  from { opacity: 0; transform: translateX(-26px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.broll .bskip {
+  position: absolute; right: 5vw; bottom: 11.5vh;
+  font-size: 11px; letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+/* ========================= overlays ========================= */
+.overlay {
+  position: fixed; inset: 0; z-index: 30;
+  display: flex; align-items: center; justify-content: center;
+  background:
+    radial-gradient(1200px 700px at 50% 30%, rgba(20, 34, 60, 0.55), transparent 70%),
+    rgba(3, 5, 10, 0.92);
+  backdrop-filter: blur(8px);
+}
+.card {
+  width: min(760px, 92vw); padding: 34px 40px 30px;
+  background: linear-gradient(180deg, rgba(16, 22, 36, 0.94), rgba(8, 11, 18, 0.96));
+  border: 1px solid var(--edge); border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+.card.small { width: min(420px, 90vw); }
+.badge {
+  display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--red);
+  border: 1px solid rgba(255, 43, 61, 0.4); border-radius: 999px;
+  padding: 5px 14px; margin-bottom: 16px;
+}
+.card h1 { font-size: 52px; letter-spacing: 6px; font-weight: 900; line-height: 1; }
+.card h2 { font-size: 13px; letter-spacing: 6px; color: var(--dim); font-weight: 500; margin-top: 8px; }
+.lede { margin: 18px auto 22px; max-width: 560px; font-size: 13.5px; line-height: 1.65; color: #b6c2d8; }
+.controls { display: flex; gap: 28px; justify-content: center; text-align: left; margin-bottom: 18px; }
+.ctlcol { flex: 1; max-width: 300px; }
+.ctlcol h3 {
+  font-size: 10px; letter-spacing: 3px; color: var(--accent);
+  margin-bottom: 10px; font-weight: 700;
+}
+.k { display: flex; align-items: center; gap: 6px; margin-bottom: 7px; font-size: 12px; color: #c4cee0; }
+.k span { color: var(--dim); margin-left: 4px; }
+kbd {
+  display: inline-block; min-width: 24px; text-align: center;
+  padding: 3px 7px; font-size: 11px; font-family: inherit;
+  background: rgba(255, 255, 255, 0.08); border: 1px solid var(--edge);
+  border-bottom-width: 2px; border-radius: 5px; color: #fff;
+}
+.gamepad { font-size: 11px; color: var(--dim); margin-bottom: 20px; }
+button {
+  font: inherit; font-size: 13px; font-weight: 800; letter-spacing: 3px;
+  padding: 14px 40px; border-radius: 10px; cursor: pointer;
+  color: #04070d; background: linear-gradient(180deg, #7ee8ff, #00c8e6);
+  border: none; box-shadow: 0 10px 28px rgba(0, 200, 230, 0.35);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+button:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(0, 200, 230, 0.5); }
+button:active { transform: translateY(0); }
+button:disabled {
+  opacity: 0.35; cursor: not-allowed; transform: none;
+  box-shadow: none; filter: grayscale(0.6);
+}
+
+/* ---------------- Driver / team selection ---------------- */
+.card.wide {
+  width: min(1120px, 96vw); padding: 22px 26px 20px;
+  max-height: 94vh; overflow-y: auto;
+}
+.card.wide h1 { font-size: 34px; letter-spacing: 4px; }
+.lede.small { margin: 10px auto 16px; font-size: 12.5px; }
+
+.teamgrid {
+  display: grid; gap: 9px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-bottom: 18px;
+}
+.teamcard {
+  border: 1px solid var(--edge); border-radius: 10px; overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex; flex-direction: column;
+}
+/* The team's own colour is carried in as a custom property by main.js. */
+.teamcard .tname {
+  font-size: 9px; letter-spacing: 1.5px; font-weight: 800; padding: 6px 5px;
+  color: var(--label, #fff); background: var(--team, #333);
+  border-bottom: 2px solid var(--accentcol, #fff);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.drivopt {
+  all: unset; cursor: pointer; padding: 7px 6px; text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 120ms ease;
+}
+.drivopt:first-of-type { border-top: none; }
+.drivopt:hover { background: rgba(255, 255, 255, 0.09); }
+.drivopt .dcode {
+  display: block; font-size: 14px; font-weight: 900; letter-spacing: 1.5px; color: #fff;
+}
+.drivopt .dname { display: block; font-size: 9.5px; color: var(--dim); margin-top: 1px; }
+.drivopt .dnum {
+  display: inline-block; font-size: 9.5px; font-weight: 800; margin-top: 3px;
+  color: var(--numcol, #fff);
+}
+.drivopt.sel { background: rgba(255, 255, 255, 0.16); box-shadow: inset 0 0 0 2px var(--accentcol, #fff); }
+
+.langrow {
+  display: flex; align-items: center; justify-content: center;
+  gap: 14px; flex-wrap: wrap; margin: 4px 0 16px;
+}
+.langlabel { font-size: 10px; letter-spacing: 3px; color: var(--dim); }
+.langpick { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.langpick button {
+  padding: 8px 14px; border-radius: 7px; cursor: pointer;
+  background: rgba(255, 255, 255, 0.06); color: #b6c2d8;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font: inherit; font-size: 12px; letter-spacing: 1.5px;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+}
+.langpick button:hover { background: rgba(255, 255, 255, 0.12); }
+.langpick button .lnote {
+  font-size: 9px; letter-spacing: 0.5px; color: var(--dim);
+  text-transform: none; max-width: 130px;
+}
+.langpick button.sel { background: rgba(0, 200, 230, 0.16); border-color: #00c8e6; color: #fff; }
+
+.selrow { display: flex; align-items: center; justify-content: center; gap: 24px; }
+.toggle { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #b6c2d8; cursor: pointer; }
+.toggle input { accent-color: #00c8e6; width: 15px; height: 15px; cursor: pointer; }
+
+@media (max-width: 1000px) {
+  .teamgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .teamgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .card.wide { padding: 16px 14px; }
+}
+
+@media (max-width: 900px) {
+  .timing { min-width: 0; width: calc(100vw - 24px); padding: 8px 10px; }
+  .cell.wide { min-width: 84px; }
+  .cell b { font-size: 16px; }
+  .dash { min-width: 0; width: calc(100vw - 24px); }
+  .mapbox, .pedals { display: none; }
+  .controls { flex-direction: column; gap: 10px; }
+}

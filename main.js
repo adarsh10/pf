@@ -19,17 +19,17 @@ if (themeToggle) {
 
     document.documentElement.classList.add('theme-switching');
     document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
+    try { localStorage.setItem('theme', next); } catch { /* Storage is optional. */ }
 
     setTimeout(() => document.documentElement.classList.remove('theme-switching'), 500);
   });
 }
 
 // ── Nav scroll effect ─────────────────────────────────────────────
-const nav = document.querySelector('.nav');
-if (nav) {
+const mainNav = document.querySelector('.nav');
+if (mainNav) {
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 20);
+    mainNav.classList.toggle('scrolled', window.scrollY > 20);
   }, { passive: true });
 }
 
@@ -38,19 +38,30 @@ const toggle = document.querySelector('.nav-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
 
 if (toggle && mobileMenu) {
+  const closeMenu = () => {
+    mobileMenu.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
   toggle.addEventListener('click', () => {
     const isOpen = mobileMenu.classList.toggle('open');
     toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
   // Close on link click
   document.querySelectorAll('.mobile-link').forEach(link => {
     link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      toggle.classList.remove('open');
-      document.body.style.overflow = '';
+      closeMenu();
     });
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && mobileMenu.classList.contains('open')) {
+      closeMenu();
+      toggle.focus();
+    }
   });
 }
 
@@ -357,4 +368,3 @@ if (document.getElementById('openStories')) {
     setup();
   }
 })();
-

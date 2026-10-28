@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script src="theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI play — Independent experiments by Adarsh Raj Shah</title>
+  <meta name="description" content="Four independent, AI-assisted builds by Adarsh Raj Shah: Honda Elevate Atlas, Sage interiors, a Formula racing simulator, and Flight 171: The public record." />
+  <link rel="canonical" href="https://www.adarssssh.in/ai-play.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI play — Adarsh Raj Shah" />
+  <meta property="og:description" content="Small obsessions, working prototypes. A car atlas, a room studio, a racing experiment, and an evidence-led explainer." />
+  <meta property="og:url" content="https://www.adarssssh.in/ai-play.html" />
+  <meta property="og:image" content="https://www.adarssssh.in/Images/ai-play/sage-interiors.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ai-play.css" />
+  <script src="main.js" defer></script>
+  <script src="ai-play.js" defer></script>
+</head>
+<body class="ai-play-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">Adarssssh.</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="ai-play.html" class="nav-ai-link" aria-current="page"><span class="nav-ai-label">AI play</span></a>
+      <a href="clicks.html">Clicks</a>
+      <a href="Adarsh_Raj_Shah_UX_Designer_CV.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#work" class="mobile-link">Work</a>
+    <a href="index.html#about" class="mobile-link">About</a>
+    <a href="index.html#contact" class="mobile-link">Contact</a>
+    <a href="ai-play.html" class="mobile-link nav-ai-link" aria-current="page"><span class="nav-ai-label">AI play</span></a>
+    <a href="clicks.html" class="mobile-link">Clicks</a>
+    <a href="Adarsh_Raj_Shah_UX_Designer_CV.pdf" target="_blank" rel="noopener" class="mobile-link mobile-link--resume">Resume</a>
+  </div>
+  <main id="main" class="lab-shell">
+    <header class="lab-header">
+      <div class="lab-intro">
+        <div class="lab-intro-heading">
+          <h1 class="lab-title">AI <em>play</em><svg class="lab-mark" aria-hidden="true" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M32 5v54M5 32h54M13 13l38 38M13 51l38-38"/></svg></h1>
+          <div class="lab-intro-copy"><p>I raise PRs to fix UX bugs in the product I work on. I also explore what AI can do. Here are a few things I've built.</p></div>
+        </div>
+        <aside class="play-collage" aria-label="Project playground">
+          <div class="play-collage-stage">
+            <span class="play-orbit" aria-hidden="true"></span>
+            <a class="play-toy play-toy--car" href="#honda-elevate" aria-label="Explore Honda Elevate breakdown"><span class="play-toy-paper"><img src="Images/ai-play/honda-elevate.webp" alt="" width="1200" height="750" /><span class="play-toy-caption">Under the hood <span aria-hidden="true">↗</span></span></span></a>
+            <a class="play-toy play-toy--room" href="#sage-interiors" aria-label="Explore DIY interior design studio"><span class="play-toy-paper"><img src="Images/ai-play/sage-interiors.webp" alt="" width="1200" height="750" /><span class="play-toy-caption">Make room <span aria-hidden="true">↗</span></span></span></a>
+            <a class="play-toy play-toy--race" href="#f1-racing" aria-label="Explore Formula 1 in BIC, India"><span class="play-toy-paper"><img src="Images/ai-play/f1-racing.webp" alt="" width="1200" height="750" /><span class="play-toy-caption">One more lap <span aria-hidden="true">↗</span></span></span></a>
+            <a class="play-toy play-toy--record" href="#flight-171" aria-label="Explore Air India 171: The story"><span class="play-toy-paper"><img src="Images/ai-play/flight-171.webp" alt="" width="1200" height="750" /><span class="play-toy-caption">Read the record <span aria-hidden="true">↗</span></span></span></a>
+          </div>
+          <button class="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button>
+        </aside>
+      </div>
+    </header>
+
+    <section class="lab-experiments" id="experiments" aria-label="The experiments">
+      <div class="experiment-grid">
+        <article class="experiment-card" id="honda-elevate" data-project>
+          <div class="experiment-topline"><span>01 / Under the hood</span><span class="experiment-kind">Interactive 3D</span></div>
+          <a class="experiment-image" href="play.html?project=honda-elevate" aria-label="Try Honda Elevate breakdown">
+            <img src="Images/ai-play/honda-elevate.webp" alt="Honda Elevate breakdown with a selectable mechanical cutaway and component notes" width="1200" height="750" />
+          </a>
+          <div class="experiment-info">
+            <h2 class="experiment-name"><a href="play.html?project=honda-elevate">Honda Elevate breakdown</a></h2>
+            <p class="experiment-desc">A long list of parts is hard to picture. This atlas puts the explanations beside a 3D cutaway: pick a component, see what it connects to, and follow a short tour through the system.</p>
+            <a class="experiment-link" href="play.html?project=honda-elevate">Explore the car <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="experiment-card" id="sage-interiors" data-project>
+          <div class="experiment-topline"><span>02 / Make room</span><span class="experiment-kind">Room studio</span></div>
+          <a class="experiment-image" href="play.html?project=sage-interiors" aria-label="Try DIY interior design studio">
+            <img src="Images/ai-play/sage-interiors.webp" alt="DIY interior design studio: a bedroom model with editable materials and furniture" width="1200" height="750" />
+          </a>
+          <div class="experiment-info">
+            <h2 class="experiment-name"><a href="play.html?project=sage-interiors">DIY interior design studio</a></h2>
+            <p class="experiment-desc">A nice reference image doesn't tell you what fits. This room studio lets you change the furniture, lighting, and materials together, compare saved versions, and take a closer look from inside the room.</p>
+            <a class="experiment-link" href="play.html?project=sage-interiors">Step inside <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="experiment-card" id="f1-racing" data-project>
+          <div class="experiment-topline"><span>03 / One more lap</span><span class="experiment-kind">Keyboard + gamepad</span></div>
+          <a class="experiment-image" href="play.html?project=f1-racing" aria-label="Try Formula 1 in BIC, India">
+            <img src="Images/ai-play/f1-racing.webp" alt="Cockpit racing view with live timing, speed, and a circuit minimap" width="1200" height="750" loading="lazy" />
+          </a>
+          <div class="experiment-info">
+            <h2 class="experiment-name"><a href="play.html?project=f1-racing">Formula 1 in BIC, India</a></h2>
+            <p class="experiment-desc">A Formula-style racing experiment around Buddh: cockpit view, live timing, opponents, and commentary. The interesting interface problem is what you can read at speed—and what should stay out of the way.</p>
+            <a class="experiment-link" href="play.html?project=f1-racing">Take a lap <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="experiment-card" id="flight-171" data-project>
+          <div class="experiment-topline"><span>04 / Read the record</span><span class="experiment-kind">Educational explainer</span></div>
+          <a class="experiment-image" href="play.html?project=flight-171" aria-label="Explore Air India 171: The story">
+            <img src="Images/ai-play/flight-171.webp" alt="Air India 171: The story, with a published-evidence timeline and source notes" width="1200" height="750" loading="lazy" />
+          </a>
+          <div class="experiment-info">
+            <h2 class="experiment-name"><a href="play.html?project=flight-171">Air India 171: The story</a></h2>
+            <p class="experiment-desc">An interactive reading of the published record on the Air India crash. A timeline, evidence ledger, and clearly labeled illustrations keep reported observations separate from what the interface merely helps you picture.</p>
+            <a class="experiment-link" href="play.html?project=flight-171">Explore the record <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+      <p class="play-disclosure">Independent, AI-assisted coding experiments, separate from my work at Microsoft. No model API or account is required to try them.</p>
+    </section>
+  </main>
+  <footer class="footer"><div class="footer-left">© 2026 Adarsh Raj Shah. All rights reserved.</div><div class="footer-right">Designed by me. Built with AI.</div></footer>
+</body>
+</html>

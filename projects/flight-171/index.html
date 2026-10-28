@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (() => {
+        const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
+        const theme =
+          param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An independent, source-linked interactive account of Air India Flight 171. Explore the published evidence, its timing and its limits." />
+    <title>Flight 171 | The public record</title>
+    <script type="module" crossorigin src="./assets/index-Ci6Io69z.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DeoLc0mD.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

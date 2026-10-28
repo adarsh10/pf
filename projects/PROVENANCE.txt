@@ -1,0 +1,27 @@
+AI play: independent project exports
+
+These are static browser builds of Adarsh Raj Shah's existing personal projects.
+No development dependencies, private configuration, credentials, or Microsoft
+product source code are included.
+
+honda-elevate: Elevate Atlas, React / TypeScript / Three.js.
+Production Vite build with relative asset paths.
+The exterior is embedded using Sketchfab's supported viewer. Creator, license,
+model-year mismatch, and source notes are preserved inside the app.
+
+sage-interiors: Sage room studio, now nook & vibe, React / TypeScript / Three.js.
+Self-contained production build. The supplied plan is a cropped room drawing
+with no name, address, or contact details. All geometry is conceptual.
+No saved personal design-library data is included.
+
+f1-racing: original browser racing prototype with a local Three.js module.
+Vendor license headers are retained. Fan-made; no official affiliation.
+
+flight-171: Flight 171: The public record, React / TypeScript / Three.js.
+Production Vite build with relative asset paths. Claim-level sources and
+uncertainty statements are preserved. Not an official investigation or finding
+of cause; illustrative motion is distinct from published evidence.
+
+All four projects are AI-assisted builds, not claims that a hosted model powers
+the runtime. No user research, commercial outcomes, or client endorsements are
+asserted for these experiments.

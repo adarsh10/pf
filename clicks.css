@@ -258,6 +258,9 @@
 
 /* ---- Lightbox ---- */
 .lightbox {
+  --cp-player-text: #f2f0ec;
+  --cp-player-surface: #181818;
+  --cp-player-border: #383838;
   position: fixed;
   inset: 0;
   z-index: 2000;
@@ -277,6 +280,8 @@
 
 .lightbox-content {
   display: flex;
+  flex-direction: column;
+  gap: 14px;
   align-items: center;
   justify-content: center;
   max-width: 90vw;
@@ -298,13 +303,30 @@ video.lightbox-media {
 
 iframe.lightbox-iframe {
   width: min(95vw, 1600px);
-  height: min(90vh, 900px);
+  height: min(75vh, 810px);
   border: none;
   border-radius: 6px;
   background: #000;
   object-fit: unset;
   max-width: unset;
   max-height: unset;
+}
+
+.lightbox-youtube-link {
+  color: var(--cp-player-text);
+  background: var(--cp-player-surface);
+  border: 1px solid var(--cp-player-border);
+  padding: 10px 18px;
+  border-radius: 100px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.lightbox-youtube-link:hover, .lightbox-youtube-link:focus-visible {
+  border-color: var(--cp-player-text);
+}
+.click-item[role="button"]:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
 }
 
 .lightbox-close {

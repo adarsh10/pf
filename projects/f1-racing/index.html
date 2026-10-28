@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Buddh International Circuit — F1 Cockpit Simulator</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🏎️</text></svg>" />
+</head>
+<body>
+
+<canvas id="scene"></canvas>
+
+<!-- ============================ HUD ============================ -->
+<div id="hud">
+
+  <!-- Top strip: timing tower -->
+  <div class="panel timing">
+    <div class="row head">
+      <span class="circuit">BUDDH INTERNATIONAL CIRCUIT</span>
+      <span class="meta">GREATER NOIDA · <span id="lapLen">5.125</span> km · <span id="turnCount">16</span> turns</span>
+    </div>
+    <div class="row main">
+      <div class="cell">
+        <label>POS</label>
+        <b id="racePos">--</b>
+      </div>
+      <div class="cell">
+        <label>LAP</label>
+        <b id="lapNum">1</b>
+      </div>
+      <div class="cell wide">
+        <label>CURRENT</label>
+        <b id="lapTime" class="mono">0:00.000</b>
+      </div>
+      <div class="cell wide">
+        <label>LAST</label>
+        <b id="lastTime" class="mono dim">--:--.---</b>
+      </div>
+      <div class="cell wide">
+        <label>BEST</label>
+        <b id="bestTime" class="mono best">--:--.---</b>
+      </div>
+      <div class="cell">
+        <label>DELTA</label>
+        <b id="delta" class="delta mono">--.---</b>
+      </div>
+    </div>
+    <div class="row sectors" id="sectorTimes">
+      <span class="sec">--.---</span>
+      <span class="sec">--.---</span>
+      <span class="sec">--.---</span>
+    </div>
+    <div class="row battle">
+      <span class="gap ahead"><i id="gapAheadCode">---</i><b id="gapAhead" class="mono">--.-</b></span>
+      <span class="gap behind"><b id="gapBehind" class="mono">--.-</b><i id="gapBehindCode">---</i></span>
+    </div>
+  </div>
+
+  <!-- Rev light bar -->
+  <div id="revLights" class="revlights"></div>
+
+  <!-- Top left: tacho + speedo dials -->
+  <div class="panel gauges">
+    <canvas id="gaugeCanvas" width="440" height="236"></canvas>
+  </div>
+
+  <!-- Bottom left: pedals + steering -->
+  <div class="panel pedals">
+    <div class="bar"><i id="throttleFill" class="fill thr"></i><label>T</label></div>
+    <div class="bar"><i id="brakeFill" class="fill brk"></i><label>B</label></div>
+    <div class="steerbox">
+      <div class="steerarc"></div>
+      <i id="steerNeedle" class="needle"></i>
+      <label>STEER</label>
+    </div>
+    <div class="gbox">
+      <div class="gcircle"><i id="gdot"></i></div>
+      <span id="gforce">0.0g</span>
+    </div>
+  </div>
+
+  <!-- Bottom centre: speed + gear -->
+  <div class="panel dash">
+    <div class="rpmtrack"><i id="rpmFill"></i></div>
+    <div class="readout">
+      <div class="speedbox">
+        <b id="speed">0</b><small>KM/H</small>
+      </div>
+      <div id="gear" class="gear">N</div>
+      <div class="side">
+        <div id="drsLight" class="drs">DRS</div>
+        <div class="ersrow">
+          <div class="ersbar"><i id="ersFill"></i></div>
+          <span id="ersPct">100%</span>
+        </div>
+        <div class="statrow">
+          <span>TYRE <b id="tyreTemp">90°C</b></span>
+          <span>FUEL <b id="fuelVal">100 kg</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom right: minimap -->
+  <div class="panel mapbox">
+    <canvas id="minimap" width="230" height="230"></canvas>
+    <span id="camName" class="camlabel">Cockpit</span>
+  </div>
+
+  <div id="cornerName" class="corner"></div>
+  <div id="flashMsg" class="flash"></div>
+</div>
+
+<!-- ====================== Pre-race B-roll ====================== -->
+<div id="broll" class="broll hidden">
+  <div class="bbars"><i></i><i></i></div>
+  <div class="blower">
+    <div class="btitle"></div>
+    <div class="bsub"></div>
+  </div>
+  <div class="bskip">SPACE to skip</div>
+</div>
+
+<!-- ====================== Start lights ====================== -->
+<div id="startLights" class="startlights hidden"></div>
+
+<!-- ====================== Start screen ====================== -->
+<div id="startScreen" class="overlay">
+  <div class="card">
+    <div class="badge">FORMULA · SUNSET RACE</div>
+    <h1>BUDDH</h1>
+    <h2>INDIAN GRAND PRIX</h2>
+    <p class="lede">
+      Golden hour over Greater Noida. Strap into a hybrid-era Formula car and
+      race the 5.125 km Buddh International Circuit — sixteen corners, two
+      enormous straights and fourteen metres of elevation change. You line up
+      tenth for a three-lap sprint against nine rivals, with live commentary
+      calling every move.
+    </p>
+
+    <div class="controls">
+      <div class="ctlcol">
+        <h3>Driving</h3>
+        <div class="k"><kbd>W</kbd><kbd>↑</kbd><span>Throttle</span></div>
+        <div class="k"><kbd>S</kbd><kbd>↓</kbd><span>Brake</span></div>
+        <div class="k"><kbd>A</kbd><kbd>D</kbd><span>Steer</span></div>
+        <div class="k"><kbd>Space</kbd><span>DRS (in zones)</span></div>
+        <div class="k"><kbd>X</kbd><span>ERS overtake boost</span></div>
+      </div>
+      <div class="ctlcol">
+        <h3>Car &amp; view</h3>
+        <div class="k"><kbd>E</kbd><kbd>Q</kbd><span>Shift up / down</span></div>
+        <div class="k"><kbd>G</kbd><span>Auto / manual gearbox</span></div>
+        <div class="k"><kbd>C</kbd><span>Change camera</span></div>
+        <div class="k"><kbd>R</kbd><span>Reset to track</span></div>
+        <div class="k"><kbd>M</kbd> <kbd>H</kbd><span>Mute / hide HUD</span></div>
+        <div class="k"><kbd>V</kbd><span>Commentary on / off</span></div>
+        <div class="k"><kbd>N</kbd><span>Rain on / off</span></div>
+      </div>
+    </div>
+    <p class="gamepad">Gamepad supported — triggers for throttle/brake, left stick to steer.</p>
+    <button id="startBtn">CHOOSE YOUR SEAT</button>
+  </div>
+</div>
+
+<!-- =================== Driver / team selection =================== -->
+<div id="driverScreen" class="overlay hidden">
+  <div class="card wide">
+    <div class="badge">SELECT YOUR SEAT</div>
+    <h1>PICK A DRIVER</h1>
+    <p class="lede small">
+      The nine quickest of the remaining drivers make up the grid. You start
+      from the back — get through them in three laps around Buddh.
+    </p>
+    <div id="teamGrid" class="teamgrid"></div>
+    <div class="langrow">
+      <span class="langlabel">COMMENTARY LANGUAGE</span>
+      <div id="langPick" class="langpick"></div>
+    </div>
+    <div class="selrow">
+      <label class="toggle">
+        <input type="checkbox" id="commentaryToggle" checked />
+        <span>Race commentary</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="rainToggle" />
+        <span>Wet race</span>
+      </label>
+      <button id="goBtn" disabled>TO THE GRID</button>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== Pause screen ====================== -->
+<div id="pauseScreen" class="overlay hidden">
+  <div class="card small">
+    <h1>PAUSED</h1>
+    <p class="lede">Take a breath. The circuit isn't going anywhere.</p>
+    <button id="resumeBtn">RESUME</button>
+  </div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three.module.js"
+  }
+}
+</script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

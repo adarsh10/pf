@@ -143,7 +143,7 @@ img { display: block; max-width: 100%; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 28px;
 }
 
 .nav-links a {
@@ -158,8 +158,8 @@ img { display: block; max-width: 100%; }
 .nav-resume {
   font-size: 14px;
   font-weight: 600;
-  color: var(--white) !important;
-  background: var(--black);
+  color: var(--cp-nav-paper) !important;
+  background: var(--cp-nav-ink);
   padding: 8px 18px;
   border-radius: 100px;
   border: none;
@@ -167,7 +167,7 @@ img { display: block; max-width: 100%; }
 }
 
 .nav-resume:hover {
-  background: var(--gray-800) !important;
+  background: var(--cp-nav-hover);
   transform: translateY(-1px);
 }
 
@@ -277,8 +277,13 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
 
 .mobile-link:last-child { border-bottom: none; padding-bottom: 0; }
 
-.mobile-link--resume {
-  color: var(--black);
+.mobile-menu .mobile-link--resume {
+  width: fit-content;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 100px;
+  background: var(--cp-nav-ink);
+  color: var(--cp-nav-paper);
   font-weight: 700;
 }
 
@@ -436,6 +441,41 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
 .work {
   padding: var(--section-padding) 0;
   background: var(--white);
+}
+
+.ai-promo-wrap {
+  --cp-promo-divider: var(--gray-200);
+  max-width: var(--container);
+  margin: 0 auto 32px;
+  padding: 32px clamp(20px, 5vw, 60px) 0;
+  border-top: 1px solid var(--cp-promo-divider);
+}
+.ai-promo {
+  --cp-promo-surface: var(--gray-100);
+  --cp-promo-text: var(--black);
+  --cp-promo-muted: var(--gray-600);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 28px 32px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--cp-promo-surface);
+  color: var(--cp-promo-text);
+}
+.ai-promo h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+.ai-promo h3 em { color: var(--cp-play-accent); }
+.ai-promo p { margin-top: 8px; font-size: 14px; line-height: 1.7; color: var(--cp-promo-muted); }
+.ai-promo .btn { flex-shrink: 0; }
+.ai-promo .btn:focus-visible { outline: 2px solid var(--cp-play-accent); outline-offset: 4px; }
+@media (max-width: 768px) {
+  .ai-promo { flex-direction: column; align-items: flex-start; gap: 20px; padding: 24px; }
 }
 
 /* ---- Microsoft Journey Banner ---- */
@@ -837,7 +877,6 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 clamp(20px, 5vw, 60px);
-  border-top: 1px solid var(--gray-200);
 }
 
 .project-card {
@@ -4250,4 +4289,46 @@ html[data-theme="light"] .theme-img-dark  { display: none; }
 }
 html[data-theme="light"] .response-img {
   background: #ece9e3;
+}
+
+/* Shared navigation — the AI shimmer stops on the current page. */
+:root {
+  --cp-play-accent: #fd8ea1;
+  --cp-play-warm: #f97316;
+  --cp-play-gold: #facc15;
+  --cp-nav-ink: var(--black);
+  --cp-nav-paper: var(--white);
+  --cp-nav-hover: var(--gray-800);
+}
+html[data-theme="light"] {
+  --cp-play-accent: #b11f4b;
+  --cp-play-warm: #c2410c;
+  --cp-play-gold: #9a6700;
+}
+.nav-links a:focus-visible, .mobile-link:focus-visible { outline: 2px solid var(--cp-play-accent); outline-offset: 4px; }
+.nav .nav-links a[aria-current="page"], .mobile-menu .mobile-link[aria-current="page"] {
+  color: var(--cp-nav-ink);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .nav-ai-label {
+    background: linear-gradient(110deg, var(--cp-play-accent), var(--cp-play-warm), var(--cp-play-gold), var(--cp-play-accent));
+    background-size: 300% 100%;
+    background-position: 0% 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: nav-ai-shimmer 4.8s ease-in-out infinite alternate;
+  }
+  .mobile-menu .nav-ai-label { animation: none; }
+  .mobile-menu.open .nav-ai-label { animation: nav-ai-shimmer 4.8s ease-in-out infinite alternate; }
+}
+.nav-ai-link[aria-current="page"] .nav-ai-label { animation: none; background: none; -webkit-text-fill-color: currentColor; }
+@keyframes nav-ai-shimmer {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-ai-label { animation: none !important; background: none; -webkit-text-fill-color: currentColor; }
 }
